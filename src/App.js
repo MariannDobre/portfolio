@@ -1,24 +1,81 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Nav from './components/header/nav';
+import Header from './components/header/header';
+import Progress from './components/progress/progress';
+import Experience from './components/sections/experience';
+import Test from './components/test';
+
+// app layout
+const SAppWrapper = styled.div`
+  --max-width: 128rem;
+  --padding: 20rem 0 0 0;
+
+  display: flex;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--padding);
+`;
+
+const SAppMain = styled.div`
+  --width: 116rem;
+
+  width: var(--width);
+`;
+
+// app components
+const HeadingsContainer = styled.div`
+  --margin: 10rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-family: var(--font-fam-sans);
+  margin-bottom: var(--margin);
+`;
+
+const SAppHeading = styled.h3`
+  color: var(--clr-stone-200);
+  font-size: calc(var(--font-size-3xl) * 2);
+`;
+
+const SAppSubheading = styled.p`
+  color: var(--clr-violet-400);
+  font-size: var(--font-size-lg);
+`;
+
+// progress bars on scrolling between sections
+const ProgressContainer = styled.div`
+  --width: 12rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: var(--width);
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+
+      <SAppWrapper>
+        <ProgressContainer>
+          <Progress />
+        </ProgressContainer>
+
+        <SAppMain>
+          <HeadingsContainer>
+            <SAppHeading>Let's start from here</SAppHeading>
+
+            <SAppSubheading>About Me</SAppSubheading>
+          </HeadingsContainer>
+
+          <Header />
+
+          <Experience />
+        </SAppMain>
+      </SAppWrapper>
+    </>
   );
 }
 
