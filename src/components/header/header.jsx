@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Blur } from '../../styledComponents';
+import { Blur } from '../../interface/styledComponents';
 
 import { IoMdInformationCircle } from 'react-icons/io';
 import { SiReact, SiSupabase } from 'react-icons/si';
@@ -11,7 +11,7 @@ import { VscDebugAlt } from 'react-icons/vsc';
 import { VscExtensions } from 'react-icons/vsc';
 
 const headerData = [
-  { rowData: `What's up mate, my name is Marian.` },
+  { rowData: `What's up mate, my name is Alex.` },
   { rowData: '' },
   { rowData: 'I just try to build cute and nice things for the web.' },
   {
@@ -291,8 +291,8 @@ function Header() {
       </Branch>
 
       <Blur
-        $top='4rem'
-        $left='0'
+        $top='6rem'
+        $left='2rem'
         $blurRadius='16rem'
         $spreadRadius='8rem'
         $shadowColor='var(--clr-sky-600)'
@@ -301,10 +301,10 @@ function Header() {
 
       <Blur
         $top='52rem'
-        $right='-2rem'
+        $right='4rem'
         $blurRadius='16rem'
         $spreadRadius='8rem'
-        $shadowColor='#7c3aed'
+        $shadowColor='var(--clr-violet-600)'
         $zIndex='-1'
       />
     </SHeader>

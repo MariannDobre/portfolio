@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Bar } from '../../styledComponents';
-import { FaRegUser } from 'react-icons/fa';
+import { Bar } from '../../interface/styledComponents';
+import { FaRegUser, FaWrench } from 'react-icons/fa';
 import { FaCode } from 'react-icons/fa6';
 
 const SProgress = styled.div`
@@ -96,8 +96,22 @@ function Progress() {
 
       <Bar
         $width='0.3rem'
-        $height='24rem'
-        $background='linear-gradient(to bottom, var(--clr-emerald-600), transparent)'
+        $height='calc(10rem + 20rem + 48rem + 7.2rem - 1.6rem)'
+        $background='linear-gradient(to bottom, var(--clr-emerald-600) 15%, var(--clr-emerald-300), var(--clr-orange-400))'
+        $y='1.6rem'
+      />
+
+      <SectionMarker
+        icon={<FaWrench />}
+        iconSize='2.4rem'
+        blurColor='var(--clr-orange-400)'
+      />
+
+      <Bar
+        $width='0.3rem'
+        // $height='calc(10rem + 48rem)'
+        $height='120rem'
+        $background='linear-gradient(to bottom, var(--clr-orange-400) 15%, var(--clr-yellow-400), var(--clr-rose-400) 75%)'
         $y='1.6rem'
       />
     </SProgress>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Tooltip from '../../interface/tooltip';
 
 const items = [
   { id: 1, label: 'about', path: '#' },
@@ -149,9 +150,11 @@ function Nav() {
           </SNavList>
         </SNav>
 
-        <Resume>
-          <button>resume</button>
-        </Resume>
+        <Tooltip text='Download resume.pdf'>
+          <Resume>
+            <button>resume</button>
+          </Resume>
+        </Tooltip>
       </SNavContainer>
     </SNavWrapper>
   );

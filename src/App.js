@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import Nav from './components/header/nav';
 import Header from './components/header/header';
 import Progress from './components/progress/progress';
-import Experience from './components/sections/experience';
-import Test from './components/test';
+import Experience from './components/sections//experience/experience';
+import Projects from './components/sections/projects/projects';
 
 // app layout
 const SAppWrapper = styled.div`
@@ -73,6 +73,8 @@ function App() {
           <Header />
 
           <Experience />
+
+          <Projects />
         </SAppMain>
       </SAppWrapper>
     </>
