@@ -9,6 +9,7 @@ import Files from './files';
 const SHeaderContent = styled.header`
   --max-width: 116rem;
   --height: 56rem;
+  --height-tablet: 60rem;
   --padding: 1.6rem;
   --rounded: 1.6rem;
 
@@ -22,6 +23,20 @@ const SHeaderContent = styled.header`
   padding: var(--padding);
   border: 0.1rem solid var(--bg-clr-contrast);
   border-radius: var(--rounded);
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    .mediaGap {
+      gap: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    height: var(--height-tablet);
+
+    .mediaGap {
+      gap: 1.6rem;
+    }
+  }
 `;
 
 const Branch = styled.span`
@@ -43,7 +58,10 @@ function HeaderContent() {
     <SHeaderContent>
       <Dots />
 
-      <Box $gap='2.4rem'>
+      <Box
+        className='mediaGap'
+        $gap='2.4rem'
+      >
         <Features />
 
         <Box

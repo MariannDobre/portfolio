@@ -9,12 +9,17 @@ import Contact from './components/sections/contact/contact';
 // app layout
 const SAppWrapper = styled.div`
   --max-width: 128rem;
-  --padding: 12rem 0 20rem 0;
+  --padding: 12rem 2rem 20rem 4rem;
 
   display: flex;
+  gap: 1.2rem;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--padding);
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    padding: 12rem 2rem 20rem 2rem;
+  }
 `;
 
 const SAppMain = styled.div`
@@ -25,7 +30,7 @@ const SAppMain = styled.div`
 
 // progress bars on scrolling between sections
 const ProgressContainer = styled.div`
-  --width: 12rem;
+  --width: calc(12rem - 1.2rem);
 
   display: flex;
   align-items: flex-start;

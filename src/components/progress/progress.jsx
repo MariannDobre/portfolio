@@ -43,12 +43,16 @@ const Circle = styled.div`
 `;
 
 const Section = styled.div`
+  --dimension: 2.4rem;
+  --dimension-laptop: 2rem;
+  --dimension-mobile: 1.8rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: var(--dimension);
+  height: var(--dimension);
 
   span {
     width: 100%;
@@ -63,7 +67,31 @@ const Section = styled.div`
 
   svg {
     color: var(--clr-white);
-    font-size: ${(props) => props.$iconSize};
+    font-size: ${(props) => props.$iconSize || '2.4rem'};
+  }
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    width: var(--dimension-laptop);
+    height: var(--dimension-laptop);
+
+    svg {
+      font-size: var(--font-size-md);
+    }
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    svg {
+      font-size: calc(var(--font-size-md) - 0.2rem);
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    width: var(--dimension-mobile);
+    height: var(--dimension-mobile);
+
+    svg {
+      font-size: var(--font-size-base);
+    }
   }
 `;
 
@@ -98,7 +126,6 @@ function Progress() {
 
       <SectionMarker
         icon={<FaRegUser />}
-        iconSize='2.4rem'
         blurColor='var(--clr-violet-400)'
       />
 
@@ -111,7 +138,6 @@ function Progress() {
 
       <SectionMarker
         icon={<FaCode />}
-        iconSize='2.4rem'
         blurColor='var(--clr-emerald-600)'
       />
 
@@ -124,7 +150,6 @@ function Progress() {
 
       <SectionMarker
         icon={<FaWrench />}
-        iconSize='2.4rem'
         blurColor='var(--clr-orange-400)'
       />
 
@@ -137,7 +162,6 @@ function Progress() {
 
       <SectionMarker
         icon={<TfiEmail />}
-        iconSize='2.4rem'
         blurColor='var(--clr-rose-400)'
       />
 

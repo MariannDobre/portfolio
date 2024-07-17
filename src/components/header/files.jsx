@@ -3,46 +3,21 @@ import { IoMdInformationCircle } from 'react-icons/io';
 import { SiReact, SiSupabase } from 'react-icons/si';
 import styled from 'styled-components';
 
-const headerData = [
-  { rowData: `What's up mate, my name is Alex.` },
-  { rowData: '' },
-  { rowData: 'I just try to build cute and nice things for the web.' },
-  {
-    rowData:
-      'I want to be a software enginner (or maybe i already am, who knows),',
-  },
-  { rowData: 'specializing in building complex user interfaces.' },
-  { rowData: '' },
-  {
-    rowData:
-      'My current focus is on honing my skills in React while seeking opportunities',
-  },
-  {
-    rowData:
-      'that not only allow me to grow professionally but also enrich me personally.',
-  },
-  { rowData: '' },
-  {
-    rowData:
-      'Take a scroll through my work and see what a year of self directed learning has brought.',
-  },
-  { rowData: 'Every feature, every line of code - all crafted by me,' },
-  { rowData: 'without the traditional classroom setting.' },
-  { rowData: '' },
-  { rowData: `Let's continue this journey below.` },
-  { rowData: '' },
-  { rowData: '' },
-];
-
 const FilesContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    gap: 0.4rem;
+  }
 `;
 
 const File = styled.button`
   --clr-active: rgb(99, 99, 107);
   --padding: 0.6rem 1.6rem;
+  --padding-laptop: 0.4rem 1.2rem;
+  --padding-tablet: 0.3rem 1rem;
   --rounded: 0.6rem;
 
   outline: none;
@@ -76,42 +51,40 @@ const File = styled.button`
     outline: none;
     border: none;
   }
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    font-size: calc(var(--font-size-base) - 0.3rem);
+    padding: var(--padding-laptop);
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: var(--font-size-sm);
+    padding: var(--padding-tablet);
+  }
 `;
 
-const FileContent = styled.div`
+const FileContent = styled.p`
   --width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  color: var(--clr-stone-200);
   font-size: var(--font-size-base);
   font-family: var(--font-fam-sans);
+  line-height: 1.3;
   width: var(--width);
+  max-width: var(--width);
   height: auto;
-`;
 
-const Row = styled.div`
-  display: flex;
-  gap: 1.6rem;
-`;
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    font-size: calc(var(--font-size-base) - 0.1rem);
+  }
 
-const RowIndex = styled.span`
-  --width: 2rem;
-  --height: 2rem;
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: calc(var(--font-size-base) - 0.2rem);
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  color: var(--bg-clr-contrast);
-  width: var(--width);
-  height: var(--height);
-`;
-
-const RowBody = styled.p`
-  display: flex;
-  align-items: center;
-  color: var(--clr-stone-200);
-  line-height: 1;
+  @media screen and (max-width: 480px) {
+    font-size: var(--font-size-sm);
+  }
 `;
 
 function Files() {
@@ -133,13 +106,34 @@ function Files() {
           Supabase.js
         </File>
       </FilesContainer>
+
       <FileContent>
-        {headerData.map((data, index) => (
-          <Row key={index}>
-            <RowIndex>{index + 1}</RowIndex>
-            <RowBody>{data.rowData}</RowBody>
-          </Row>
-        ))}
+        What's up mate, my name is Marian.
+        <br />
+        <br />
+        I just try to build cute and nice things for the web.
+        <br />
+        <br />
+        I also want to be a software enginner (or maybe i already am, who
+        knows), specializing
+        <br />
+        in building complex user interfaces.
+        <br />
+        <br />
+        My current focus is on honing my skills in React while seeking
+        opportunities that not
+        <br />
+        only allow me to grow professionally but also enrich me personally.
+        <br />
+        <br />
+        Take a scroll through my work and see what a year of self directed
+        learning has brought.
+        <br />
+        Every feature, every line of code - all crafted by me, without the
+        traditional classroom setting.
+        <br />
+        <br />
+        Let's continue this journey below.
       </FileContent>
     </>
   );

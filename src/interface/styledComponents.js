@@ -92,6 +92,22 @@ export const SectionHeading = styled.h3`
     ${(props) => props.$b || '0'} ${(props) => props.$l || '0'};
   letter-spacing: ${(props) => props.$ltrSpacing || '0'};
   word-spacing: ${(props) => props.$wordSpacing || '0'};
+
+  @media screen and (max-width: 1364px) {
+    font-size: var(--font-size-3xl);
+  }
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    font-size: var(--font-size-2xl);
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: var(--font-size-xl);
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: var(--font-size-lg);
+  }
 `;
 
 export const SectionSubheading = styled.p`
@@ -102,6 +118,14 @@ export const SectionSubheading = styled.p`
     ${(props) => props.$b || '0'} ${(props) => props.$l || '0'};
   letter-spacing: ${(props) => props.$ltrSpacing || '0'};
   word-spacing: ${(props) => props.$wordSpacing || '0'};
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    font-size: var(--font-size-md);
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: var(--font-size-base);
+  }
 `;
 
 // BASIC HTML ELEMENTS

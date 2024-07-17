@@ -12,20 +12,25 @@ const FeaturesContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    gap: 2rem;
+  }
 `;
 
 const Feature = styled.span`
-  --feature-width: 2.8rem;
-  --feature-height: 2.8rem;
+  --feature-dimension: 2.8rem;
+  --feature-dimension-laptop: 2.4rem;
+  --feature-dimension-tablet: 2rem;
 
   position: relative;
-  width: var(--feature-width);
-  height: var(--feature-height);
+  width: var(--feature-dimension);
+  height: var(--feature-dimension);
 
   svg {
     color: var(--bg-clr-contrast);
-    width: var(--feature-width);
-    height: var(--feature-height);
+    width: var(--feature-dimension);
+    height: var(--feature-dimension);
   }
 
   &.active {
@@ -41,6 +46,26 @@ const Feature = styled.span`
 
     svg {
       color: var(--clr-white) !important;
+    }
+  }
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    width: var(--feature-dimension-laptop);
+    height: var(--feature-dimension-laptop);
+
+    svg {
+      width: var(--feature-dimension-laptop);
+      height: var(--feature-dimension-laptop);
+    }
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    width: var(--feature-dimension-tablet);
+    height: var(--feature-dimension-tablet);
+
+    svg {
+      width: var(--feature-dimension-tablet);
+      height: var(--feature-dimension-tablet);
     }
   }
 `;
