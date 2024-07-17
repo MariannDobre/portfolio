@@ -1,14 +1,15 @@
+import { Toaster } from 'react-hot-toast';
 import styled from 'styled-components';
-import Nav from './components/header/nav';
 import Header from './components/header/header';
 import Progress from './components/progress/progress';
 import Experience from './components/sections//experience/experience';
 import Projects from './components/sections/projects/projects';
+import Contact from './components/sections/contact/contact';
 
 // app layout
 const SAppWrapper = styled.div`
   --max-width: 128rem;
-  --padding: 20rem 0 0 0;
+  --padding: 12rem 0 20rem 0;
 
   display: flex;
   max-width: var(--max-width);
@@ -20,27 +21,6 @@ const SAppMain = styled.div`
   --width: 116rem;
 
   width: var(--width);
-`;
-
-// app components
-const HeadingsContainer = styled.div`
-  --margin: 10rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  font-family: var(--font-fam-sans);
-  margin-bottom: var(--margin);
-`;
-
-const SAppHeading = styled.h3`
-  color: var(--clr-stone-200);
-  font-size: calc(var(--font-size-3xl) * 2);
-`;
-
-const SAppSubheading = styled.p`
-  color: var(--clr-violet-400);
-  font-size: var(--font-size-lg);
 `;
 
 // progress bars on scrolling between sections
@@ -56,27 +36,46 @@ const ProgressContainer = styled.div`
 function App() {
   return (
     <>
-      <Nav />
-
       <SAppWrapper>
         <ProgressContainer>
           <Progress />
         </ProgressContainer>
 
         <SAppMain>
-          <HeadingsContainer>
-            <SAppHeading>Let's start from here</SAppHeading>
-
-            <SAppSubheading>About Me</SAppSubheading>
-          </HeadingsContainer>
-
           <Header />
 
           <Experience />
 
           <Projects />
+
+          <Contact />
         </SAppMain>
       </SAppWrapper>
+
+      <Toaster
+        position='top-center'
+        gutter={12}
+        toastOptions={{
+          success: {
+            duration: 3750,
+          },
+          error: {
+            duration: 5000,
+          },
+          style: {
+            maxWidth: '64rem',
+            color: 'var(--clr-stone-200)',
+            backgroundColor: 'var(--bg-clr-secondary)',
+            fontSize: 'var(--font-size-base)',
+            fontFamily: 'var(--font-fam-sans)',
+            textAlign: 'center',
+            letterSpacing: '0.1rem',
+            wordSpacing: '0.1rem',
+            padding: '1.6rem 2.4rem',
+            borderRadius: '0.4rem',
+          },
+        }}
+      />
     </>
   );
 }

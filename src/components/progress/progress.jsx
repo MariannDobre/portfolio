@@ -1,8 +1,10 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { Bar } from '../../interface/styledComponents';
 import { FaRegUser, FaWrench } from 'react-icons/fa';
 import { FaCode } from 'react-icons/fa6';
+import { TfiEmail } from 'react-icons/tfi';
 
 const SProgress = styled.div`
   --width: 1.2rem;
@@ -12,6 +14,20 @@ const SProgress = styled.div`
   align-items: center;
   justify-content: center;
   width: var(--width);
+
+  transition: all 3.5s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
 `;
 
 const Circle = styled.div`
@@ -64,8 +80,13 @@ function SectionMarker({ icon, iconSize, blurColor }) {
 }
 
 function Progress() {
+  const { ref: progressRef, inView: isInView } = useInView();
+
   return (
-    <SProgress>
+    <SProgress
+      ref={progressRef}
+      className={isInView ? 'visible' : 'hidden'}
+    >
       <Circle />
 
       <Bar
@@ -83,7 +104,7 @@ function Progress() {
 
       <Bar
         $width='0.3rem'
-        $height='calc(10rem + 56rem + 20rem + 3.2rem + 0.8rem + 1.6rem)'
+        $height='calc(10rem + 56rem + 20rem + 3.2rem + 0.8rem + 1.6rem + 0.2rem)'
         $background='linear-gradient(to bottom, var(--clr-violet-400) 15%, var(--clr-sky-600), var(--clr-emerald-600))'
         $y='1.6rem'
       />
@@ -109,11 +130,25 @@ function Progress() {
 
       <Bar
         $width='0.3rem'
-        // $height='calc(10rem + 48rem)'
-        $height='120rem'
+        $height='calc(10rem + 20rem + 92rem + 7.2rem - 1.6rem + 0.2rem)'
         $background='linear-gradient(to bottom, var(--clr-orange-400) 15%, var(--clr-yellow-400), var(--clr-rose-400) 75%)'
         $y='1.6rem'
       />
+
+      <SectionMarker
+        icon={<TfiEmail />}
+        iconSize='2.4rem'
+        blurColor='var(--clr-rose-400)'
+      />
+
+      <Bar
+        $width='0.3rem'
+        $height='calc(10rem + 46.4rem - 1.6rem * 2 - 0.8rem)'
+        $background='linear-gradient(to bottom, var(--clr-rose-400), transparent)'
+        $y='1.6rem'
+      />
+
+      <Circle />
     </SProgress>
   );
 }

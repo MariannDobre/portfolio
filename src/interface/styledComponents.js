@@ -58,6 +58,20 @@ export const Section = styled.section`
   min-height: ${(props) => props.$minHeight || 'auto'};
   background-color: ${(props) => props.$bgColor || 'transparent'};
   margin-bottom: ${(props) => props.$marginBottom || '0'};
+
+  transition: all 1.75s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+  }
 `;
 
 export const HeadingsContainer = styled.header`
@@ -139,7 +153,7 @@ export const Link = styled.a`
 `;
 
 export const CustomButton = styled.button`
-  outline: none;
+  outline: ${(props) => props.$outline || 'none'};
   border: none;
   border-left: ${(props) => props.$borderLeft || 'none'};
   display: ${(props) => props.$display || 'inline-block'};
@@ -154,11 +168,28 @@ export const CustomButton = styled.button`
   letter-spacing: 0.15rem;
   padding: ${(props) => props.$t || '0'} ${(props) => props.$r || '0'}
     ${(props) => props.$b || '0'} ${(props) => props.$l || '0'};
+  border-radius: ${(props) => props.$brdRadius || 'none'};
   cursor: pointer;
 
   transition: all 0.35s ease;
 
+  &:disabled {
+    outline-color: ${(props) => props.$disableOutlineColor || 'transparent'};
+    border-color: ${(props) => props.$disableBorderColor || 'none'};
+    color: ${(props) => props.$disableTextColor || 'var(--clr-white)'};
+    background-color: ${(props) => props.$disableBgColor || 'transparent'};
+    cursor: not-allowed;
+  }
+
+  &:hover:disabled {
+    outline-color: ${(props) => props.$disableOutlineColor || 'transparent'};
+    border-color: ${(props) => props.$disableBorderColor || 'none'};
+    color: ${(props) => props.$disableTextColor || 'var(--clr-white)'};
+    background-color: ${(props) => props.$disableBgColor || 'transparent'};
+  }
+
   &:hover {
+    outline-color: ${(props) => props.$hoverOutlineColor || 'transparent'};
     border-color: ${(props) => props.$hoverBorderColor || 'none'};
     color: ${(props) => props.$hoverTextColor || 'var(--clr-white)'};
     background-color: ${(props) => props.$hoverBgColor || 'transparent'};
