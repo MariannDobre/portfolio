@@ -28,6 +28,12 @@ const STooltip = styled.div`
     border-radius: var(--rounded);
     padding: var(--padding);
     margin-top: var(--margin);
+
+    @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+      font-size: var(--font-size-sm);
+      letter-spacing: normal;
+      word-spacing: normal;
+    }
   }
 `;
 

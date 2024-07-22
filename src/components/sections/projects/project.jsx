@@ -14,6 +14,10 @@ const SProject = styled.div`
   gap: 1.6rem;
   width: var(--width);
   height: var(--height);
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    flex-direction: column;
+  }
 `;
 
 const Name = styled.p`
@@ -41,9 +45,8 @@ const projects = [
     projectType: 'IMDb Clone',
     image: '/projectsImages/moviepire-bg.JPG',
     about: 'In work...',
-    link: 'https://www.youtube.com/watch?v=qR5KTWqgkM4&ab_channel=BogdanDLP',
-    githubRepo:
-      'https://www.youtube.com/watch?v=qR5KTWqgkM4&ab_channel=BogdanDLP',
+    link: 'https://moviepire-journal.netlify.app',
+    githubRepo: '/',
   },
   {
     id: 2,
@@ -76,6 +79,7 @@ function Project() {
       {projects.map((project) => (
         <SProject key={project.id}>
           <Image
+            className='projects-section-image'
             $width='52rem'
             $height='28rem'
             $filter='grayscale(100%)'

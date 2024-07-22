@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Box,
   Link,
+  Paragraph,
   SectionHeading,
   SectionSubheading,
   Span,
@@ -15,6 +16,16 @@ const Description = styled.p`
   font-size: calc(var(--font-size-base) - 0.2rem);
   letter-spacing: 0.15rem;
   word-spacing: 0.15rem;
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    font-size: calc(var(--font-size-base) - 0.3rem);
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: var(--font-size-sm);
+  }
 `;
 
 const List = styled.ul`
@@ -34,6 +45,16 @@ const ListItem = styled.li`
 
   &::marker {
     color: var(--clr-emerald-600);
+  }
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    font-size: calc(var(--font-size-base) - 0.3rem);
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: var(--font-size-sm);
   }
 `;
 
@@ -120,6 +141,7 @@ function ExperienceTabContent({ sectionIndex }) {
       $height='100%'
     >
       <SectionHeading
+        className='experience-section-title'
         $textColor='var(--clr-emerald-600)'
         $fontSize='var(--font-size-lg)'
         $t='0.8rem'
@@ -134,6 +156,7 @@ function ExperienceTabContent({ sectionIndex }) {
 
       {/* Subtitle of each section */}
       <SectionSubheading
+        className='experience-section-subtitle'
         $textColor='var(--clr-stone-200)'
         $fontSize='calc(var(--font-size-base) - 0.1rem)'
         $ltrSpacing='0.15rem'
@@ -144,19 +167,18 @@ function ExperienceTabContent({ sectionIndex }) {
 
       {/* !ONLY FOR COURSE SECTION */}
       {sectionIndex === 0 ? (
-        <p
+        <Paragraph
+          className='experience-section-platform'
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            color: 'var(--clr-emerald-600)',
-            fontSize: 'var(--font-size-base)',
-            fontWeight: 'bold',
-            letterSpacing: '0.15rem',
-            wordSpacing: '0.15rem',
             paddingTop: '1.6rem',
             paddingBottom: '0.8rem',
           }}
+          $display='flex'
+          $alignItems='center'
+          $textColor='var(--clr-emerald-600)'
+          $fontWeight='bold'
+          $ltrSpacing='0.15rem'
+          $wordSpacing='0.15rem'
         >
           Platform:&nbsp;
           <Span
@@ -167,7 +189,7 @@ function ExperienceTabContent({ sectionIndex }) {
           >
             {sectionsContent[0]?.content[0]?.platform}
           </Span>
-        </p>
+        </Paragraph>
       ) : null}
 
       {/* Description of each section */}
@@ -182,6 +204,7 @@ function ExperienceTabContent({ sectionIndex }) {
           $gap='0.8rem'
         >
           <Span
+            className='experience-section-resources'
             style={{
               paddingTop: '1.6rem',
             }}
@@ -209,6 +232,7 @@ function ExperienceTabContent({ sectionIndex }) {
           $gap='0.8rem'
         >
           <Span
+            className='experience-section-topics'
             $textColor='var(--clr-emerald-600)'
             $fontSize='var(--font-size-base)'
             $fontWeight='bold'
@@ -235,6 +259,7 @@ function ExperienceTabContent({ sectionIndex }) {
           $gap='0.8rem'
         >
           <Span
+            className='experience-section-topics'
             style={{
               paddingTop: '1.6rem',
             }}
@@ -259,6 +284,7 @@ function ExperienceTabContent({ sectionIndex }) {
       {sectionIndex === 0 ? (
         <Tooltip text='View udemy certificate'>
           <Link
+            className='experience-section-link'
             $textColor='var(--clr-emerald-600)'
             $fontWeight='700'
             $hoverTextColor='var(--clr-stone-200)'

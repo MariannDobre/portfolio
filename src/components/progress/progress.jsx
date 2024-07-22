@@ -118,6 +118,7 @@ function Progress() {
       <Circle />
 
       <Bar
+        className='intro-bar'
         $width='0.3rem'
         $height='calc(13.5rem - 3.2rem - 0.8rem - 3.2rem)'
         $background='linear-gradient(to bottom, transparent, var(--clr-violet-400))'
@@ -130,6 +131,7 @@ function Progress() {
       />
 
       <Bar
+        className='about-bar'
         $width='0.3rem'
         $height='calc(10rem + 56rem + 20rem + 3.2rem + 0.8rem + 1.6rem + 0.2rem)'
         $background='linear-gradient(to bottom, var(--clr-violet-400) 15%, var(--clr-sky-600), var(--clr-emerald-600))'
@@ -142,6 +144,7 @@ function Progress() {
       />
 
       <Bar
+        className='experience-bar'
         $width='0.3rem'
         $height='calc(10rem + 20rem + 48rem + 7.2rem - 1.6rem)'
         $background='linear-gradient(to bottom, var(--clr-emerald-600) 15%, var(--clr-emerald-300), var(--clr-orange-400))'
@@ -154,6 +157,7 @@ function Progress() {
       />
 
       <Bar
+        className='projects-bar'
         $width='0.3rem'
         $height='calc(10rem + 20rem + 92rem + 7.2rem - 1.6rem + 0.2rem)'
         $background='linear-gradient(to bottom, var(--clr-orange-400) 15%, var(--clr-yellow-400), var(--clr-rose-400) 75%)'
@@ -166,6 +170,7 @@ function Progress() {
       />
 
       <Bar
+        className='contact-bar'
         $width='0.3rem'
         $height='calc(10rem + 46.4rem - 1.6rem * 2 - 0.8rem)'
         $background='linear-gradient(to bottom, var(--clr-rose-400), transparent)'

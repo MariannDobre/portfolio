@@ -6,12 +6,27 @@ import { CustomButton } from '../../../interface/styledComponents';
 
 const Form = styled.form`
   --max-width: 52rem;
+  --max-width-laptop: 48rem;
+  --max-width-tablet: 44rem;
+  --max-width-mobile: 32rem;
   --padding: 1.6rem;
 
   display: flex;
   flex-direction: column;
   max-width: var(--max-width);
   font-family: var(--font-fam-sans);
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    max-width: var(--max-width-laptop);
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    max-width: var(--max-width-tablet);
+  }
+
+  @media screen and (max-width: 480px) {
+    max-width: var(--max-width-mobile);
+  }
 `;
 
 const Label = styled.label`
@@ -20,6 +35,16 @@ const Label = styled.label`
   letter-spacing: 0.15rem;
   word-spacing: 0.15rem;
   margin-bottom: 0.4rem;
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: calc(var(--font-size-base) - 0.1rem);
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: calc(var(--font-size-base) - 0.2rem);
+  }
 `;
 
 const Input = styled.input`
@@ -39,6 +64,16 @@ const Input = styled.input`
   &:active,
   &:focus-visible {
     outline: 0.15rem solid var(--clr-rose-300);
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: calc(var(--font-size-base) - 0.3rem);
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: var(--font-size-sm);
   }
 `;
 
@@ -61,6 +96,16 @@ const Message = styled.textarea`
   &:active,
   &:focus-visible {
     outline: 0.15rem solid var(--clr-rose-300);
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664) {
+    font-size: calc(var(--font-size-base) - 0.3rem);
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: var(--font-size-sm);
   }
 `;
 
@@ -130,6 +175,7 @@ function ContactForm() {
       />
 
       <CustomButton
+        className='contact-section-submitBtn'
         $outline='0.15rem solid var(--clr-rose-300)'
         $textColor='var(--clr-rose-300)'
         $t='0.8rem'
