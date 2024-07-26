@@ -7,8 +7,10 @@ import { CustomButton } from '../../../interface/styledComponents';
 const Form = styled.form`
   --max-width: 52rem;
   --max-width-laptop: 48rem;
-  --max-width-tablet: 44rem;
-  --max-width-mobile: 32rem;
+  --max-width-laptop: 44rem;
+  --max-width-tablet: 40rem;
+  --max-width-mobile: 28rem;
+  --max-width-mobile-small: 24rem;
   --padding: 1.6rem;
 
   display: flex;
@@ -20,7 +22,7 @@ const Form = styled.form`
     max-width: var(--max-width-laptop);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
     max-width: var(--max-width-tablet);
   }
 
@@ -36,7 +38,7 @@ const Label = styled.label`
   word-spacing: 0.15rem;
   margin-bottom: 0.4rem;
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
     font-size: calc(var(--font-size-base) - 0.1rem);
     letter-spacing: 0.1rem;
     word-spacing: 0.1rem;
@@ -66,7 +68,7 @@ const Input = styled.input`
     outline: 0.15rem solid var(--clr-rose-300);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
     letter-spacing: 0.1rem;
     word-spacing: 0.1rem;
@@ -98,7 +100,7 @@ const Message = styled.textarea`
     outline: 0.15rem solid var(--clr-rose-300);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
     letter-spacing: 0.1rem;
     word-spacing: 0.1rem;
@@ -186,6 +188,8 @@ function ContactForm() {
         $disableOutlineColor='var(--clr-stone-400)'
         $disableTextColor='var(--clr-stone-400)'
         $disableBgColor='var(--bg-clr-secondary)'
+        $focusOutlineColor='var(--clr-rose-400)'
+        $focusTextColor='var(--clr-rose-400)'
         disabled={isSubmiting}
       >
         {isSubmiting ? 'Sending email...' : 'Send'}

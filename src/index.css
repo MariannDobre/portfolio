@@ -52,6 +52,9 @@
   --font-weight-500: 500;
   --font-weight-600: 600;
   --font-weight-700: 700;
+
+  --app-padding: 20rem 2rem;
+  --app-padding-tablet: 16rem 1.6rem;
 }
 
 html {
@@ -60,11 +63,48 @@ html {
 
 body {
   background-color: var(--bg-clr-main);
+  padding: var(--app-padding);
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+/* CLASSNAMES FOR SECTIONS ANIMATIONS AND PROGRESS BARS */
+.section-visible {
+  opacity: 1;
+  visibility: visible;
+
+  transition: all 2.5s ease;
+}
+
+.section-hidden {
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 2.5s ease;
+}
+
+/*  */
+.bar-visible {
+  transform: scaleY(1);
+  transition-delay: 250ms;
+  transform-origin: top;
+  position: relative;
+  z-index: 100;
+
+  transition: all 0.75s ease;
+}
+
+.bar-hidden {
+  transform: scaleY(0);
+  transition-delay: 250ms;
+  transform-origin: top;
+  position: relative;
+  z-index: 100;
+
+  transition: all 0.75s ease;
 }
 
 /* BROWSER SCROLLBAR STYLES */
@@ -84,4 +124,11 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--bg-clr-contrast);
+}
+
+/*  */
+@media screen and (max-width: 768px), screen and (max-height: 664px) {
+  body {
+    padding: var(--app-padding-tablet);
+  }
 }

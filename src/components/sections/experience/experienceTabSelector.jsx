@@ -1,21 +1,21 @@
 import React from 'react';
-import { Box, CustomButton } from '../../../interface/styledComponents';
+import { Div, CustomButton } from '../../../interface/styledComponents';
 
 const sectionsButtons = [
   { id: 1, label: 'course', value: 'course' },
   { id: 2, label: 'learning', value: 'learning' },
-  // { id: 3, label: 'practice', value: 'practice' },
 ];
 
 function ExperienceTabSelector({ sectionIndex, setSectionIndex }) {
   return (
-    <Box
+    <Div
       style={{ alignSelf: 'flex-start' }}
       $direction='column'
       $width='20rem'
     >
       {sectionsButtons.map((button, index) => (
         <CustomButton
+          className='exp-tab-selector-btn'
           style={{
             color: sectionIndex === index ? 'var(--clr-emerald-600)' : '',
             borderLeftColor:
@@ -39,7 +39,7 @@ function ExperienceTabSelector({ sectionIndex, setSectionIndex }) {
           {button.label}
         </CustomButton>
       ))}
-    </Box>
+    </Div>
   );
 }
 

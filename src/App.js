@@ -1,47 +1,46 @@
 import { Toaster } from 'react-hot-toast';
 import styled from 'styled-components';
-import Header from './components/header/header';
 import Progress from './components/progress/progress';
 import Experience from './components/sections//experience/experience';
 import Projects from './components/sections/projects/projects';
-import Contact from './components/sections/contact/contact';
+import Test from './components/test';
 
 // app layout
-const SAppWrapper = styled.div`
-  --max-width: 128rem;
-  --padding: 12rem 2rem 20rem 4rem;
+// const SAppWrapper = styled.div`
+//   --max-width: 128rem;
+//   --padding: 12rem 2rem 20rem 4rem;
 
-  display: flex;
-  gap: 1.2rem;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--padding);
+//   display: flex;
+//   gap: 1.2rem;
+//   max-width: var(--max-width);
+//   margin: 0 auto;
+//   padding: var(--padding);
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
-    padding: 12rem 2rem 20rem 2rem;
-  }
-`;
+//   @media screen and (max-width: 768px), screen and (max-height: 664) {
+//     padding: 12rem 2rem 20rem 2rem;
+//   }
+// `;
 
-const SAppMain = styled.div`
-  --width: 116rem;
+// const SAppMain = styled.div`
+//   --width: 116rem;
 
-  width: var(--width);
-`;
+//   width: var(--width);
+// `;
 
-// progress bars on scrolling between sections
-const ProgressContainer = styled.div`
-  --width: calc(12rem - 1.2rem);
+// // progress bars on scrolling between sections
+// const ProgressContainer = styled.div`
+//   --width: calc(12rem - 1.2rem);
 
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: var(--width);
-`;
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: center;
+//   width: var(--width);
+// `;
 
 function App() {
   return (
     <>
-      <SAppWrapper>
+      {/* <SAppWrapper>
         <ProgressContainer>
           <Progress />
         </ProgressContainer>
@@ -55,7 +54,9 @@ function App() {
 
           <Contact />
         </SAppMain>
-      </SAppWrapper>
+      </SAppWrapper> */}
+
+      <Test />
 
       <Toaster
         position='top-center'

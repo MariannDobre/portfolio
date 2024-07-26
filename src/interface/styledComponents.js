@@ -12,6 +12,18 @@ export const Blur = styled.span`
   box-shadow: 0 0 ${(props) => props.$blurRadius}
     ${(props) => props.$spreadRadius} ${(props) => props.$shadowColor};
   z-index: ${(props) => props.$zIndex};
+
+  @media screen and (max-width: 1364px) {
+  }
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  }
+
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 Blur.defaultProps = {
@@ -29,94 +41,26 @@ export const Bar = styled.div`
   width: ${(props) => props.$width || 'auto'};
   height: ${(props) => props.$height || 'auto'};
   background: ${(props) => props.$background || 'transparent'};
+  border-radius: 8px !important;
   margin: ${(props) => props.$y || '0'} ${(props) => props.$x || '0'};
 
   @media screen and (max-width: 1364px) {
-    &.intro-bar {
-      height: calc(9rem - 4.8rem);
-    }
-
-    &.about-bar {
-      height: calc(10rem + 56rem + 20rem + 3.2rem);
-    }
-
-    &.experience-bar {
-      height: calc(10rem + 20rem + 48rem + 3.3rem - 0.2rem);
-    }
-
-    &.projects-bar {
-      height: calc(10rem + 20rem + 92rem + 3.3rem + 0.6rem - 0.4rem);
-    }
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-    &.intro-bar {
-      height: calc(7.9rem - 4.3rem);
-    }
-
-    &.about-bar {
-      height: calc(10rem + 56rem + 20rem + 2.8rem - 0.2rem);
-    }
-
-    &.experience-bar {
-      height: calc(10rem + 20rem + 48rem + 2.8rem - 0.2rem);
-    }
-
-    &.projects-bar {
-      height: calc(10rem + 20rem + 144.7rem + 7.9rem + 10rem - 2.8rem - 0.2rem);
-    }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
-    &.intro-bar {
-      height: calc(6.7rem - 3.7rem - 0.4rem);
-    }
-
-    &.about-bar {
-      height: calc(10rem + 56rem + 20rem + 3.7rem + 2.2rem - 0.4rem);
-    }
-
-    &.experience-bar {
-      height: calc(10rem + 20rem + 48rem + 2.2rem - 0.4rem - 0.2rem);
-    }
-
-    &.projects-bar {
-      height: calc(
-        10rem + 20rem + 144.7rem + 6.7rem + 0.4rem + 3.7rem + 2.2rem + 0.4rem
-      );
-    }
-  }
-
-  /* MEDIA FOR HEADING BREAKING INTO NEW LINE */
-  @media screen and (max-width: 601px) {
-    &.about-bar {
-      height: calc(10rem + 56rem + 20rem + 7.4rem + 2.2rem - 0.4rem);
-    }
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
   }
 
   @media screen and (max-width: 480px) {
-    &.intro-bar {
-      height: calc(6.2rem - 3.2rem - 0.8rem);
-    }
-
-    &.about-bar {
-      height: calc(10rem + 56rem + 20rem + 6.4rem + 2.2rem - 0.4rem);
-    }
-
-    &.experience-bar {
-      height: calc(10rem + 20rem + 48rem + 2.2rem - 0.4rem - 0.2rem);
-    }
-
-    &.projects-bar {
-      height: calc(10rem + 20rem + 144.7rem + 1rem);
-    }
   }
 `;
 
 // FOR JSX STRUCTURE
 // ---------------------
 
-export const Box = styled.div`
+export const Div = styled.div`
   display: flex;
   flex-direction: ${(props) => props.$direction || 'row'};
   align-items: ${(props) => props.$alignItems || 'flex-start'};
@@ -130,6 +74,99 @@ export const Box = styled.div`
   position: ${(props) => props.$position || 'static'};
   padding: ${(props) => props.$padY || '0'} ${(props) => props.$padX || '0'};
   z-index: ${(props) => props.$zIndex || '0'};
+
+  @media screen and (max-width: 1364px) {
+    &.progress-content {
+      gap: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    &.progress-content {
+      gap: 1.6rem;
+    }
+
+    /* ABOUT SECTION */
+    &.about-content {
+      gap: 1.6rem;
+    }
+
+    &.about-files-container {
+      gap: 1.2rem;
+    }
+
+    /* PROJECTS SECTION */
+    &.project-wrapper {
+      max-width: 60rem;
+      gap: 4rem;
+    }
+
+    &.project-details-container {
+      max-width: 60rem;
+      height: 32rem;
+    }
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+    &.progress-content {
+      gap: 1.4rem;
+    }
+
+    /* ABOUT SECTION */
+    &.about-content {
+      gap: 1.4rem;
+    }
+
+    &.about-files-container {
+      gap: 0.8rem;
+    }
+
+    /* PROJECTS SECTION */
+    &.project-wrapper {
+      max-width: 44rem;
+    }
+
+    &.project-details-container {
+      max-width: 44rem;
+      height: 28rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &.progress-content {
+      gap: 1.2rem;
+    }
+
+    /* ABOUT SECTION */
+    &.about-content {
+      gap: 1.2rem;
+    }
+
+    &.about-files-container {
+      gap: 0.4rem;
+    }
+
+    /* PROJECTS SECTION */
+    &.project-wrapper {
+      max-width: 36rem;
+    }
+
+    &.project-details-container {
+      max-width: 36rem;
+      height: 20rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    &.project-wrapper {
+      max-width: 32rem;
+    }
+
+    &.project-details-container {
+      max-width: 32rem;
+      height: 20rem;
+    }
+  }
 `;
 
 export const Section = styled.section`
@@ -140,124 +177,21 @@ export const Section = styled.section`
   background-color: ${(props) => props.$bgColor || 'transparent'};
   margin-bottom: ${(props) => props.$marginBottom || '0'};
 
-  transition: all 1.75s ease;
-
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-  }
-
-  &.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-100%);
-  }
-`;
-
-export const HeadingsContainer = styled.header`
-  display: flex;
-  flex-direction: ${(props) => props.$direction || 'row'};
-  align-items: ${(props) => props.$alignItems || 'flex-start'};
-  justify-content: ${(props) => props.$justifyContent || 'flex-start'};
-  gap: ${(props) => props.$gap || '0'};
-  font-family: var(--font-fam-sans);
-  margin-bottom: ${(props) => props.$marginBottom || '10rem'};
-`;
-
-export const SectionHeading = styled.h3`
-  color: ${(props) => props.$textColor || 'var(--clr-stone-200)'};
-  font-size: ${(props) =>
-    props.$fontSize || 'calc(var(--font-size-3xl) * 1.5)'};
-  padding: ${(props) => props.$t || '0'} ${(props) => props.$r || '0'}
-    ${(props) => props.$b || '0'} ${(props) => props.$l || '0'};
-  letter-spacing: ${(props) => props.$ltrSpacing || '0'};
-  word-spacing: ${(props) => props.$wordSpacing || '0'};
-
   @media screen and (max-width: 1364px) {
-    font-size: var(--font-size-3xl);
-
-    &.experience-section-title {
-      font-size: calc(var(--font-size-lg) - 0.2rem);
-    }
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-    font-size: var(--font-size-2xl);
-
-    &.experience-section-title {
-      font-size: var(--font-size-md);
-    }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
-    font-size: var(--font-size-xl);
-
-    &.experience-section-title {
-      font-size: calc(var(--font-size-md) - 0.2rem);
-    }
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
   }
 
   @media screen and (max-width: 480px) {
-    font-size: var(--font-size-lg);
-  }
-`;
-
-export const SectionSubheading = styled.p`
-  color: ${(props) => props.$textColor};
-  font-size: ${(props) => props.$fontSize || 'var(--font-size-lg)'};
-  line-height: 1.4;
-  padding: ${(props) => props.$t || '0'} ${(props) => props.$r || '0'}
-    ${(props) => props.$b || '0'} ${(props) => props.$l || '0'};
-  letter-spacing: ${(props) => props.$ltrSpacing || '0'};
-  word-spacing: ${(props) => props.$wordSpacing || '0'};
-
-  @media screen and (max-width: 1364px) {
-    &.experience-section-subtitle {
-      font-size: calc(var(--font-size-base) - 0.2rem);
-    }
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-    font-size: var(--font-size-md);
-
-    &.experience-section-subtitle {
-      font-size: calc(var(--font-size-base) - 0.3rem);
-      letter-spacing: 0.1rem;
-      word-spacing: 0.1rem;
-    }
-  }
-
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
-    font-size: var(--font-size-base);
   }
 `;
 
 // BASIC HTML ELEMENTS
 // ---------------------
-
-export const Paragraph = styled.p`
-  display: ${(props) => props.$display || 'block'};
-  flex-direction: ${(props) => props.$direction || 'row'};
-  align-items: ${(props) => props.$alignItems || 'flex-start'};
-  justify-content: ${(props) => props.$justifyContent || 'flex-start'};
-  gap: ${(props) => props.$gap || '0'};
-  width: ${(props) => props.$width || 'auto'};
-  max-width: ${(props) => props.$maxWidth || 'auto'};
-  height: ${(props) => props.$height || 'auto'};
-  min-height: ${(props) => props.$minHeight || 'auto'};
-  color: ${(props) => props.$textColor || 'var(--clr-white)'};
-  font-size: ${(props) => props.$fontSize || 'var(--font-size-base)'};
-  font-weight: ${(props) => props.$fontWeight || '400'};
-  letter-spacing: ${(props) => props.$ltrSpacing || '0'};
-  word-spacing: ${(props) => props.$wordSpacing || '0'};
-
-  @media screen and (max-width: 1364px) {
-    &.experience-section-platform {
-      font-size: calc(var(--font-size-base) - 0.1rem);
-    }
-  }
-`;
 
 export const Span = styled.span`
   display: ${(props) => props.$display || 'inline'};
@@ -277,37 +211,35 @@ export const Span = styled.span`
   word-spacing: ${(props) => props.$wordSpacing || '0'};
 
   @media screen and (max-width: 1364px) {
-    &.experience-section-topics,
-    &.experience-section-resources {
-      font-size: calc(var(--font-size-base) - 0.1rem);
-    }
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-    &.experience-section-topics,
-    &.experience-section-resources {
-      font-size: calc(var(--font-size-base) - 0.2rem);
+    &.exp-tab-content-span {
+      font-size: calc(var(--font-size-base) - 0.3rem);
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
-    &.experience-section-topics,
-    &.experience-section-resources {
-      font-size: calc(var(--font-size-base) - 0.3rem);
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+    &.exp-tab-content-span {
+      font-size: var(--font-size-sm);
     }
+  }
+
+  @media screen and (max-width: 480px) {
   }
 `;
 
 export const Link = styled.a`
   outline: none;
   border: none;
+  width: ${(props) => props.$width || 'auto'};
   color: ${(props) => props.$textColor || 'var(--clr-white)'};
   background-color: transparent;
   font-size: ${(props) => props.$fontSize || 'var(--font-size-base)'};
   font-weight: ${(props) => props.$fontWeight || '400'};
   text-decoration: none;
-  letter-spacing: 0.15rem;
-  word-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
   cursor: pointer;
 
   transition: color 0.35s ease;
@@ -325,20 +257,38 @@ export const Link = styled.a`
   }
 
   @media screen and (max-width: 1364px) {
-    &.experience-section-link {
-      font-size: calc(var(--font-size-base) - 0.1rem);
+    &.github-link,
+    &.project-link {
+      font-size: calc(var(--font-size-md) - 0.2rem);
     }
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-    &.experience-section-link {
+    &.exp-tab-content-link {
+      font-size: calc(var(--font-size-base) - 0.3rem);
+    }
+
+    &.github-link,
+    &.project-link {
+      font-size: var(--font-size-base);
+    }
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+    &.exp-tab-content-link {
+      font-size: var(--font-size-sm);
+    }
+
+    &.github-link,
+    &.project-link {
       font-size: calc(var(--font-size-base) - 0.2rem);
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
-    &.experience-section-link {
-      font-size: calc(var(--font-size-base) - 0.3rem);
+  @media screen and (max-width: 480px) {
+    &.github-link,
+    &.project-link {
+      font-size: var(--font-size-sm);
     }
   }
 `;
@@ -356,7 +306,7 @@ export const CustomButton = styled.button`
   font-family: var(--font-fam-sans);
   font-weight: var(--font-weight-500);
   text-transform: capitalize;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
   padding: ${(props) => props.$t || '0'} ${(props) => props.$r || '0'}
     ${(props) => props.$b || '0'} ${(props) => props.$l || '0'};
   border-radius: ${(props) => props.$brdRadius || 'none'};
@@ -387,6 +337,42 @@ export const CustomButton = styled.button`
   }
 
   &:focus-visible {
+    outline-color: ${(props) => props.$focusOutlineColor || 'transparent'};
+    border-color: ${(props) => props.$focusBorderColor || 'none'};
+    color: ${(props) => props.$focusTextColor || 'var(--clr-white)'};
+    background-color: ${(props) => props.$focusBgColor || 'transparent'};
+  }
+
+  @media screen and (max-width: 1364px) {
+    &.exp-tab-selector-btn {
+      width: 18rem;
+      font-size: calc(var(--font-size-base) - 0.1rem);
+      padding: 1.4rem 0 1.4rem 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    &.exp-tab-selector-btn {
+      width: 16rem;
+      font-size: calc(var(--font-size-base) - 0.2rem);
+      padding: 1.2rem 0 1.2rem 1.6rem;
+    }
+  }
+
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+    &.exp-tab-selector-btn {
+      width: 14rem;
+      font-size: calc(var(--font-size-base) - 0.3rem);
+      padding: 1rem 0 1rem 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &.exp-tab-selector-btn {
+      width: 12rem;
+      font-size: var(--font-size-sm);
+      padding: 0.8rem 0 0.8rem 1.2rem;
+    }
   }
 `;
 
@@ -397,33 +383,39 @@ export const Image = styled.img`
   height: ${(props) => props.$height || 'auto'};
   min-height: ${(props) => props.$minHeight || 'auto'};
   filter: ${(props) => props.$filter || 'none'};
+
   transition: all 0.5s ease;
 
   @media screen and (max-width: 1364px) {
-    &.projects-section-image {
-      width: 48rem;
-      height: 24rem;
+    &.project-image {
     }
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-    &.projects-section-image {
-      width: 44rem;
-      height: 20rem;
+    &.project-image {
+      max-width: 60rem;
+      height: 32rem;
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
-    &.projects-section-image {
-      width: 40rem;
-      height: 20rem;
+  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+    &.project-image {
+      max-width: 44rem;
+      height: 28rem;
     }
   }
 
   @media screen and (max-width: 480px) {
-    &.projects-section-image {
-      width: 32rem;
-      height: 16rem;
+    &.project-image {
+      max-width: 36rem;
+      height: 20rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    &.project-image {
+      max-width: 32rem;
+      height: 20rem;
     }
   }
 `;
