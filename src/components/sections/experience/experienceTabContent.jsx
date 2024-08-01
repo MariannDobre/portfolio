@@ -10,25 +10,25 @@ const Wrapper = styled.div`
   align-items: flex-start;
   gap: 1.6rem;
   font-family: var(--font-fam-sans);
-  padding: 1.6rem 1.6rem 1.6rem 0;
+  padding: 1.6rem 1.6rem 3.2rem 0;
 
   @media screen and (max-width: 1364px) {
     gap: 1.4rem;
-    padding: 1.4rem 1.4rem 1.4rem 0;
+    padding: 1.4rem 1.4rem 2.8rem 0;
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
     gap: 1.2rem;
-    padding: 1.2rem 1.2rem 1.2rem 0;
+    padding: 1.2rem 1.2rem 2.4rem 0;
   }
 
   @media screen and (max-width: 768px), screen and (max-height: 664px) {
     gap: 1rem;
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem 1rem 2rem 0;
   }
 
   @media screen and (max-width: 480px) {
-    padding: 0.8rem 0.8rem 0.8rem 0;
+    padding: 0.8rem 0.8rem 1.6rem 0;
   }
 `;
 
@@ -80,7 +80,12 @@ const Description = styled.p`
   }
 
   @media screen and (max-width: 768px), screen and (max-height: 664px) {
-    font-size: var(--font-size-sm);
+    &.hidden {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -215,7 +220,9 @@ function ExperienceTabContent({ sectionIndex }) {
 
       {/* !ONLY FOR COURSE SECTION */}
       {sectionIndex === 0 ? (
-        <Description>{sectionsContent[0]?.content[0]?.description}</Description>
+        <Description className='hidden'>
+          {sectionsContent[0]?.content[0]?.description}
+        </Description>
       ) : null}
 
       {/* !ONLY FOR LEARNING SECTION */}

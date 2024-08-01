@@ -13,6 +13,7 @@ const StyledSectionTitle = styled.h1`
   word-spacing: var(--word-spacing-default);
   padding: 0;
   margin: 0;
+  line-height: 1;
 
   @media screen and (max-width: 1364px) {
     font-size: var(--font-size-3xl);
@@ -42,6 +43,7 @@ const StyledSectionSubtitle = styled.p`
   word-spacing: var(--word-spacing-default);
   padding: 0;
   margin: 0;
+  line-height: 1;
 
   @media screen and (max-width: 1364px) {
     font-size: calc(var(--font-size-lg) - 0.2rem);
@@ -68,9 +70,9 @@ function SectionHeadings({ title, subtitle, subtitleTextColor }) {
       $gap='1.6rem'
       $width='100%'
       $maxWidth='100%'
-      $bgColor='purple'
     >
       <SectionTitle title={title} />
+
       <SectionSubtitle
         subtitle={subtitle}
         subtitleTextColor={subtitleTextColor}

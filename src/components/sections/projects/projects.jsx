@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Div, Image, Link, Span } from '../../../interface/styledComponents';
+import { Div, Image, Link } from '../../../interface/styledComponents';
 import { FiGithub } from 'react-icons/fi';
 import { HiOutlineArrowTopRightOnSquare } from 'react-icons/hi2';
 import Tooltip from '../../../interface/tooltip';
@@ -135,7 +135,7 @@ function Projects() {
       $maxWidth='140rem'
       $direction='column'
       $gap='2rem'
-      $bgColor='blue'
+      // $bgColor='blue'
     >
       {projects.map((project) => (
         <SProject key={project.id}>

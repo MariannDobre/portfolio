@@ -6,32 +6,19 @@ import ExperienceTabContent from './experienceTabContent';
 const StyledExperienceContent = styled.aside`
   --max-width: 140rem;
 
-  --height-course: 40rem;
-  --height-learning: 44rem;
-
-  --height-course-laptop-lg: 40rem;
-  --height-learning-laptop-lg: 44rem;
-
-  --height-course-tablet: 52rem;
-  --height-course-tablet-2: 56rem;
-  --height-learning-tablet: 48rem;
-
-  --height-course-mobile: 64rem;
-  --height-learning-mobile: 52rem;
-
   display: flex;
   gap: 1.6rem;
   max-width: var(--max-width);
-  background-color: var(--bg-clr-secondary);
+  /* background-color: var(--bg-clr-secondary); */
 
   transition: height 0.35s ease;
 
   &.course-height {
-    height: var(--height-course);
+    height: auto;
   }
 
   &.learning-height {
-    height: var(--height-learning);
+    height: auto;
   }
 
   @media screen and (max-width: 1364px) {

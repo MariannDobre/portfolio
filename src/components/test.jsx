@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
 import { Div, Section } from '../interface/styledComponents';
 import Progress from './progress/progress';
 import About from './sections/about/about';
@@ -7,39 +6,86 @@ import Experience from './sections/experience/experience';
 import SectionHeadings from '../interface/sectionHeadings';
 import Projects from './sections/projects/projects';
 import ContactForm from './sections/contact/contactForm';
+import useSectionHeight from '../hooks/useSectionHeight';
 
 function Test() {
   const [sectionIndex, setSectionIndex] = useState(0);
+  const {
+    measureRef: aboutMeasureRef,
+    sectionHeight: aboutSectionHeight,
+    intersectionRef: aboutSectionRef,
+    inView: isAboutSectionInView,
+  } = useSectionHeight({ optionalTabIndex: null });
+  const {
+    measureRef: expMeasureRef,
+    sectionHeight: expSectionHeight,
+    intersectionRef: expSectionRef,
+    inView: isExpSectionInView,
+  } = useSectionHeight({ optionalTabIndex: sectionIndex });
+  const {
+    measureRef: projectsMeasureRef,
+    sectionHeight: projectsSectionHeight,
+    intersectionRef: projectsSectionRef,
+    inView: isProjectsSectionInView,
+  } = useSectionHeight({ optionalTabIndex: null });
+  const {
+    measureRef: contactMeasureRef,
+    sectionHeight: contactSectionHeight,
+    intersectionRef: contactSectionRef,
+    inView: isContactSectionInView,
+  } = useSectionHeight({ optionalTabIndex: null });
 
   return (
     <Section
       $width='100%'
       $maxWidth='100%'
-      $minHeight='400rem'
-      $bgColor='var(--bg-clr-secondary)'
+      $minHeight='auto'
     >
       <Div
         className='progress-content'
         $gap='2rem'
       >
-        <Progress sectionIndex={sectionIndex} />
+        <Progress
+          sectionsHeights={[
+            aboutSectionHeight,
+            expSectionHeight,
+            projectsSectionHeight,
+            contactSectionHeight,
+          ]}
+        />
 
         <Div
           $direction='column'
-          // $justifyContent='space-between'
           $gap='20rem'
           $width='100%'
           $maxWidth='100%'
-          $minHeight='360rem'
-          $bgColor='blue'
+          $minHeight='auto'
         >
-          <AboutTest />
+          <AboutTest
+            measureRef={aboutMeasureRef}
+            intersectionRef={aboutSectionRef}
+            inView={isAboutSectionInView}
+          />
+
           <ExperienceTest
             sectionIndex={sectionIndex}
             setSectionIndex={setSectionIndex}
+            measureRef={expMeasureRef}
+            intersectionRef={expSectionRef}
+            inView={isExpSectionInView}
           />
-          <ProjectsTest />
-          <ContactTest />
+
+          <ProjectsTest
+            measureRef={projectsMeasureRef}
+            intersectionRef={projectsSectionRef}
+            inView={isProjectsSectionInView}
+          />
+
+          <ContactTest
+            measureRef={contactMeasureRef}
+            intersectionRef={contactSectionRef}
+            inView={isContactSectionInView}
+          />
         </Div>
       </Div>
     </Section>
@@ -47,12 +93,13 @@ function Test() {
 }
 
 // SECTION1 TEST COMPONENTS
-function AboutTest() {
-  const { ref: aboutSectionRef, inView } = useInView();
-
+function AboutTest({ measureRef, intersectionRef, inView }) {
   return (
     <Section
-      ref={aboutSectionRef}
+      ref={(element) => {
+        measureRef.current = element;
+        intersectionRef(element);
+      }}
       className={inView ? 'section-visible' : 'section-hidden'}
       $width='100%'
       $maxWidth='100%'
@@ -60,7 +107,7 @@ function AboutTest() {
       <SectionHeadings
         title="Let's start from here"
         subtitle='About me'
-        subtitleTextColor='var(--clr-violet-600)'
+        subtitleTextColor='var(--clr-violet-400)'
       />
 
       <SectionContent componentToRender={<About />} />
@@ -69,16 +116,22 @@ function AboutTest() {
 }
 
 // SECTION2 TEST COMPONENTS
-function ExperienceTest({ sectionIndex, setSectionIndex }) {
-  const { ref: expSectionRef, inView } = useInView();
-
+function ExperienceTest({
+  sectionIndex,
+  setSectionIndex,
+  measureRef,
+  intersectionRef,
+  inView,
+}) {
   return (
     <Section
-      ref={expSectionRef}
+      ref={(element) => {
+        measureRef.current = element;
+        intersectionRef(element);
+      }}
       className={inView ? 'section-visible' : 'section-hidden'}
       $width='100%'
       $maxWidth='100%'
-      $bgColor='orange'
     >
       <SectionHeadings
         title='A journey of self - discovery'
@@ -99,16 +152,16 @@ function ExperienceTest({ sectionIndex, setSectionIndex }) {
 }
 
 // SECTION3 TEST COMPONENTS
-function ProjectsTest() {
-  const { ref: projectsSectionRef, inView } = useInView();
-
+function ProjectsTest({ measureRef, intersectionRef, inView }) {
   return (
     <Section
-      ref={projectsSectionRef}
+      ref={(element) => {
+        measureRef.current = element;
+        intersectionRef(element);
+      }}
       className={inView ? 'section-visible' : 'section-hidden'}
       $width='100%'
       $maxWidth='100%'
-      $bgColor='orange'
     >
       <SectionHeadings
         title='Where the work pays off'
@@ -122,16 +175,16 @@ function ProjectsTest() {
 }
 
 // SECTION4 TEST COMPONENTS
-function ContactTest() {
-  const { ref: contactSectionRef, inView } = useInView();
-
+function ContactTest({ measureRef, intersectionRef, inView }) {
   return (
     <Section
-      ref={contactSectionRef}
+      ref={(element) => {
+        measureRef.current = element;
+        intersectionRef(element);
+      }}
       className={inView ? 'section-visible' : 'section-hidden'}
       $width='100%'
       $maxWidth='100%'
-      $bgColor='orange'
     >
       <SectionHeadings
         title='Say hello'

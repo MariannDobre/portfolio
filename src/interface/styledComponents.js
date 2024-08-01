@@ -45,15 +45,28 @@ export const Bar = styled.div`
   margin: ${(props) => props.$y || '0'} ${(props) => props.$x || '0'};
 
   @media screen and (max-width: 1364px) {
+    &.intro-bar {
+      height: calc(7.4rem - (2 * 1.6rem) - 2.2rem - 1.2rem);
+    }
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    &.intro-bar {
+      height: calc(6.8rem - (2 * 1.6rem) - 2rem - 1rem);
+    }
   }
 
   @media screen and (max-width: 768px), screen and (max-height: 664px) {
+    &.intro-bar {
+      height: calc(6.2rem - (2 * 1.6rem) - 1.8rem - 0.8rem);
+    }
   }
 
   @media screen and (max-width: 480px) {
+    &.intro-bar {
+      height: calc(5.6rem - (2 * 1.6rem) - 1.6rem);
+      background: var(--clr-violet-400);
+    }
   }
 `;
 
@@ -103,7 +116,7 @@ export const Div = styled.div`
 
     &.project-details-container {
       max-width: 60rem;
-      height: 32rem;
+      height: 20rem;
     }
   }
 
@@ -365,6 +378,12 @@ export const CustomButton = styled.button`
       font-size: calc(var(--font-size-base) - 0.3rem);
       padding: 1rem 0 1rem 1.4rem;
     }
+
+    &.contact-section-submitBtn {
+      font-size: calc(var(--font-size-base) - 0.1rem);
+      letter-spacing: 0.1rem;
+      word-spacing: 0.1rem;
+    }
   }
 
   @media screen and (max-width: 480px) {
@@ -372,6 +391,16 @@ export const CustomButton = styled.button`
       width: 12rem;
       font-size: var(--font-size-sm);
       padding: 0.8rem 0 0.8rem 1.2rem;
+    }
+
+    &.contact-section-submitBtn {
+      font-size: calc(var(--font-size-base) - 0.2rem);
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    &.contact-section-submitBtn {
+      font-size: calc(var(--font-size-base) - 0.3rem);
     }
   }
 `;
@@ -387,8 +416,6 @@ export const Image = styled.img`
   transition: all 0.5s ease;
 
   @media screen and (max-width: 1364px) {
-    &.project-image {
-    }
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {

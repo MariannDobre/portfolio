@@ -6,7 +6,7 @@ import { CustomButton } from '../../../interface/styledComponents';
 
 const Form = styled.form`
   --max-width: 52rem;
-  --max-width-laptop: 48rem;
+  --max-width-laptop-lg: 48rem;
   --max-width-laptop: 44rem;
   --max-width-tablet: 40rem;
   --max-width-mobile: 28rem;
@@ -18,6 +18,10 @@ const Form = styled.form`
   max-width: var(--max-width);
   font-family: var(--font-fam-sans);
 
+  @media screen and (max-width: 1364px) {
+    max-width: var(--max-width-laptop-lg);
+  }
+
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
     max-width: var(--max-width-laptop);
   }
@@ -28,6 +32,10 @@ const Form = styled.form`
 
   @media screen and (max-width: 480px) {
     max-width: var(--max-width-mobile);
+  }
+
+  @media screen and (max-width: 400px) {
+    max-width: var(--max-width-mobile-small);
   }
 `;
 
@@ -46,6 +54,10 @@ const Label = styled.label`
 
   @media screen and (max-width: 480px) {
     font-size: calc(var(--font-size-base) - 0.2rem);
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: calc(var(--font-size-base) - 0.3rem);
   }
 `;
 
@@ -117,6 +129,9 @@ function ContactForm() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const serviceId = process.env.REACT_APP_EMAIL_JS_SERVICE;
+  const templateId = process.env.REACT_APP_EMAIL_JS_TEMPLATE;
+  const publicKey = process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -125,8 +140,8 @@ function ContactForm() {
     setIsSubmiting(true);
 
     emailjs
-      .sendForm('service_3zlsq96', 'template_7x1zqr6', formRef.current, {
-        publicKey: '_H6Bahz7VguL2CFg0',
+      .sendForm(serviceId, templateId, formRef.current, {
+        publicKey: publicKey,
       })
       .then(
         () => {

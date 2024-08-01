@@ -44,9 +44,6 @@ const Circle = styled.div`
   border: 0.25rem solid var(--clr-gray-dark);
   border-radius: var(--rounded);
 
-  @media screen and (max-width: 1364px) {
-  }
-
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
     width: var(--dimensions-laptop);
     height: var(--dimensions-laptop);
@@ -58,6 +55,9 @@ const Circle = styled.div`
   }
 
   @media screen and (max-width: 480px) {
+    &.intro-circle {
+      display: none;
+    }
   }
 `;
 
@@ -136,19 +136,104 @@ function SectionMarker({ icon, iconSize, blurColor }) {
   );
 }
 
-function Progress({ sectionIndex }) {
-  const { ref: aboutBarRef, inView: isAboutBarInView } = useInView();
-  const { ref: expBarRef, inView: isExpBarInView } = useInView();
-  const { ref: projectsRef, inView: isProjectsBarInView } = useInView();
+function Progress({ sectionsHeights }) {
+  const { ref: aboutBar, inView: isAboutBarInView } = useInView();
+  const { ref: expBar, inView: isExpBarInView } = useInView();
+  const { ref: projectsBar, inView: isProjectsBarInView } = useInView();
+  const { ref: contactBar, inView: isContactBarInView } = useInView();
+  const deviceWidth = window.innerWidth;
+  const sectionsGap = '20rem';
+  const barMarginsY = 'calc(2 * 1.6rem)';
+
+  const iconSize = () => {
+    let iconSize = '2.4rem';
+
+    if (deviceWidth <= 480) {
+      iconSize = '1.6rem';
+    } else if (deviceWidth <= 768) {
+      iconSize = '1.8rem';
+    } else if (deviceWidth <= 1024) {
+      iconSize = '2.0rem';
+    } else if (deviceWidth <= 1364) {
+      iconSize = '2.2rem';
+    }
+
+    return iconSize;
+  };
+
+  const circleSize = () => {
+    let circleSize = '1.2rem';
+
+    if (deviceWidth <= 768) {
+      circleSize = '0.8rem';
+    } else if (deviceWidth <= 1024) {
+      circleSize = '1rem';
+    }
+
+    return circleSize;
+  };
+
+  const getContactHeadingHeight = () => {
+    let headingHeight = '8.4rem';
+
+    if (deviceWidth <= 480) {
+      headingHeight = '5.6rem';
+    } else if (deviceWidth <= 768) {
+      headingHeight = '6.2rem';
+    } else if (deviceWidth <= 1024) {
+      headingHeight = '6.8rem';
+    } else if (deviceWidth <= 1364) {
+      headingHeight = '7.4rem';
+    }
+
+    return headingHeight;
+  };
+
+  const getAboutBarHeight = () => {
+    let barHeight = `calc(${
+      sectionsHeights[0]
+    }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY})`;
+
+    if (deviceWidth <= 480) {
+      barHeight = `calc(${
+        sectionsHeights[0]
+      }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} + 2.8rem - 0.4rem)`;
+    } else if (deviceWidth <= 598) {
+      barHeight = `calc(${
+        sectionsHeights[0]
+      }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} + 2.8rem)`;
+    }
+
+    return barHeight;
+  };
+
+  const getExpBarHeight = () => {
+    let barHeight = `calc(${
+      sectionsHeights[1]
+    }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY})`;
+
+    if (deviceWidth <= 480) {
+      barHeight = `calc(${
+        sectionsHeights[1]
+      }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} - 2.8rem + 0.4rem)`;
+    } else if (deviceWidth <= 598) {
+      barHeight = `calc(${
+        sectionsHeights[1]
+      }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} - 2.8rem)`;
+    }
+
+    return barHeight;
+  };
 
   return (
     <SProgress>
-      {/* <Circle />
+      <Circle className='intro-circle' />
 
       <Bar
         className='intro-bar'
         $width='0.3rem'
-        $height='calc(13.5rem - 3.2rem - 0.8rem - 3.2rem)'
+        // heading section height - bar margins on Y axis - icon size - circle size
+        $height={`calc(8.4rem - ${barMarginsY} - 2.4rem - ${circleSize()})`}
         $background='linear-gradient(to bottom, transparent, var(--clr-violet-400))'
         $y='1.6rem'
       />
@@ -159,75 +244,20 @@ function Progress({ sectionIndex }) {
       />
 
       <Bar
-        className='about-bar'
-        $width='0.3rem'
-        $height='calc(10rem + 56rem + 20rem + 3.2rem + 0.8rem + 1.6rem + 0.2rem)'
-        $background='linear-gradient(to bottom, var(--clr-violet-400) 15%, var(--clr-sky-600), var(--clr-emerald-600))'
-        $y='1.6rem'
-      />
-
-      <SectionMarker
-        icon={<FaCode />}
-        blurColor='var(--clr-emerald-600)'
-      />
-
-      <Bar
-        className='experience-bar'
-        $width='0.3rem'
-        $height='calc(10rem + 20rem + 48rem + 7.2rem - 1.6rem)'
-        $background='linear-gradient(to bottom, var(--clr-emerald-600) 15%, var(--clr-emerald-300), var(--clr-orange-400))'
-        $y='1.6rem'
-      />
-
-      <SectionMarker
-        icon={<FaWrench />}
-        blurColor='var(--clr-orange-400)'
-      />
-
-      <Bar
-        className='projects-bar'
-        $width='0.3rem'
-        $height='calc(10rem + 20rem + 92rem + 7.2rem - 1.6rem + 0.2rem)'
-        $background='linear-gradient(to bottom, var(--clr-orange-400) 15%, var(--clr-yellow-400), var(--clr-rose-400) 75%)'
-        $y='1.6rem'
-      />
-
-      <SectionMarker
-        icon={<TfiEmail />}
-        blurColor='var(--clr-rose-400)'
-      />
-
-      <Bar
-        className='contact-bar'
-        $width='0.3rem'
-        $height='calc(10rem + 46.4rem - 1.6rem * 2 - 0.8rem)'
-        $background='linear-gradient(to bottom, var(--clr-rose-400), transparent)'
-        $y='1.6rem'
-      />
-
-      <Circle /> */}
-
-      <Circle />
-
-      <Bar
-        $width='0.3rem'
-        // heading section height - bar margins on Y axis - heading section gap - icon size
-        $height='calc(10.6rem - (1.6rem * 2) - 1.6rem - 2.4rem)'
-        $background='linear-gradient(to bottom, transparent, var(--clr-violet-400))'
-        $y='1.6rem'
-      />
-
-      <SectionMarker
-        icon={<FaRegUser />}
-        blurColor='var(--clr-violet-400)'
-      />
-
-      <Bar
-        ref={aboutBarRef}
+        ref={aboutBar}
         className={isAboutBarInView ? 'bar-visible' : 'bar-hidden'}
         $width='0.3rem'
-        // the gap between heading section and section content + section content height + gap between sections - bar top margin + heading of the section subtitle + bar bottom margin + section heading gap + line-height gap
-        $height='calc(3.2rem + 60rem + 20rem - 1.6rem + 3.2rem + 1.6rem + 1.6rem + 0.2rem)'
+        // section height from clientHeight + the gap between sections - icons size - bar margins on Y axis
+        // $height={
+        //   window.innerWidth <= 598
+        //     ? `calc(${
+        //         sectionsHeights[0]
+        //       }px + 20rem - ${iconSize()} - (2 * 1.6rem) + 2.8rem)`
+        //     : `calc(${
+        //         sectionsHeights[0]
+        //       }px + 20rem - ${iconSize()} - (2 * 1.6rem))`
+        // }
+        $height={getAboutBarHeight()}
         $background='linear-gradient(to bottom,  var(--clr-violet-400) 15%, var(--clr-sky-600), var(--clr-emerald-600))'
         $y='1.6rem'
       />
@@ -238,17 +268,20 @@ function Progress({ sectionIndex }) {
       />
 
       <Bar
-        ref={expBarRef}
-        className={`${isExpBarInView ? 'bar-visible' : 'bar-hidden'} ${
-          sectionIndex === 0 ? 'bar-course-height' : 'bar-learning-height'
-        }`}
+        ref={expBar}
+        className={isExpBarInView ? 'bar-visible' : 'bar-hidden'}
         $width='0.3rem'
-        // the gap between heading section and section content + gap between sections + content section height + next section subtitle height + gap between next sectiont titles + line-height gap
-        $height={
-          sectionIndex === 0
-            ? 'calc(3.2rem + 20rem + 40rem + 3.2rem + 1.6rem + 0.2rem)'
-            : 'calc(3.2rem + 20rem + 44rem + 3.2rem + 1.6rem + 0.2rem)'
-        }
+        // section height from clientHeight + the gap between sections - icons size - bar margins on Y axis
+        // $height={
+        //   window.innerWidth <= 598
+        //     ? `calc(${
+        //         sectionsHeights[1]
+        //       }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} - 2.8rem)`
+        //     : `calc(${
+        //         sectionsHeights[1]
+        //       }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY})`
+        // }
+        $height={getExpBarHeight()}
         $background='linear-gradient(to bottom,  var(--clr-emerald-600) 15%, var(--clr-emerald-300), var(--clr-orange-400))'
         $y='1.6rem'
       />
@@ -259,11 +292,13 @@ function Progress({ sectionIndex }) {
       />
 
       <Bar
-        ref={projectsRef}
+        ref={projectsBar}
         className={isProjectsBarInView ? 'bar-visible' : 'bar-hidden'}
         $width='0.3rem'
-        //
-        $height='calc(3.2rem + 20rem + (3 * 2rem) + (3 * 28rem) + 3.2rem - 0.2rem)'
+        // section height from clientHeight + the gap between sections - icons size - bar margins on Y axis
+        $height={`calc(${
+          sectionsHeights[2]
+        }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY})`}
         $background='linear-gradient(to bottom, var(--clr-orange-400) 15%, var(--clr-yellow-400), var(--clr-rose-400) 75%)'
         $y='1.6rem'
       />
@@ -274,9 +309,13 @@ function Progress({ sectionIndex }) {
       />
 
       <Bar
+        ref={contactBar}
+        className={isContactBarInView ? 'bar-visible' : 'bar-hidden'}
         $width='0.3rem'
         //
-        $height='calc(3.2rem + 24rem)'
+        $height={`calc(${
+          sectionsHeights[3]
+        }px - ${getContactHeadingHeight()} - 3.2rem - ${circleSize()})`}
         $background='linear-gradient(to bottom, var(--clr-rose-400), transparent)'
         $y='1.6rem'
       />
