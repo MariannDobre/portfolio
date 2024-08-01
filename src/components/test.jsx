@@ -43,7 +43,7 @@ function Test() {
     >
       <Div
         className='progress-content'
-        $gap='2rem'
+        $gap='4rem'
       >
         <Progress
           sectionsHeights={[

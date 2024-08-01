@@ -212,7 +212,11 @@ function Progress({ sectionsHeights }) {
       sectionsHeights[1]
     }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY})`;
 
-    if (deviceWidth <= 480) {
+    if (deviceWidth <= 400) {
+      barHeight = `calc(${
+        sectionsHeights[1]
+      }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} - 2.8rem + 0.4rem + 2.4rem)`;
+    } else if (deviceWidth <= 480) {
       barHeight = `calc(${
         sectionsHeights[1]
       }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} - 2.8rem + 0.4rem)`;
@@ -296,9 +300,15 @@ function Progress({ sectionsHeights }) {
         className={isProjectsBarInView ? 'bar-visible' : 'bar-hidden'}
         $width='0.3rem'
         // section height from clientHeight + the gap between sections - icons size - bar margins on Y axis
-        $height={`calc(${
-          sectionsHeights[2]
-        }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY})`}
+        $height={
+          deviceWidth <= 400
+            ? `calc(${
+                sectionsHeights[2]
+              }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} - 2.4rem)`
+            : `calc(${
+                sectionsHeights[2]
+              }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY})`
+        }
         $background='linear-gradient(to bottom, var(--clr-orange-400) 15%, var(--clr-yellow-400), var(--clr-rose-400) 75%)'
         $y='1.6rem'
       />

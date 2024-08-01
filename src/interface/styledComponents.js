@@ -90,13 +90,13 @@ export const Div = styled.div`
 
   @media screen and (max-width: 1364px) {
     &.progress-content {
-      gap: 1.8rem;
+      gap: 3.6rem;
     }
   }
 
   @media screen and (max-width: 1024px), screen and (max-height: 724px) {
     &.progress-content {
-      gap: 1.6rem;
+      gap: 3.2rem;
     }
 
     /* ABOUT SECTION */
@@ -122,7 +122,7 @@ export const Div = styled.div`
 
   @media screen and (max-width: 768px), screen and (max-height: 664px) {
     &.progress-content {
-      gap: 1.4rem;
+      gap: 2.8rem;
     }
 
     /* ABOUT SECTION */
@@ -147,7 +147,7 @@ export const Div = styled.div`
 
   @media screen and (max-width: 480px) {
     &.progress-content {
-      gap: 1.2rem;
+      gap: 2.4rem;
     }
 
     /* ABOUT SECTION */
