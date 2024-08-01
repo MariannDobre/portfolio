@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-export default function useSectionHeight({ optionalTabIndex }) {
+export function useSectionHeight({ optionalTabIndex }) {
   const measureRef = useRef();
   const { ref: intersectionRef, inView } = useInView();
   const [sectionHeight, setSectionHeight] = useState(0);

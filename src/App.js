@@ -1,62 +1,95 @@
+import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
-import styled from 'styled-components';
+import { Div, Section } from './interface/styledComponents';
+import { useSectionHeight } from './hooks/useSectionHeight';
 import Progress from './components/progress/progress';
-import Experience from './components/sections//experience/experience';
-import Projects from './components/sections/projects/projects';
-import Test from './components/test';
-
-// app layout
-// const SAppWrapper = styled.div`
-//   --max-width: 128rem;
-//   --padding: 12rem 2rem 20rem 4rem;
-
-//   display: flex;
-//   gap: 1.2rem;
-//   max-width: var(--max-width);
-//   margin: 0 auto;
-//   padding: var(--padding);
-
-//   @media screen and (max-width: 768px), screen and (max-height: 664) {
-//     padding: 12rem 2rem 20rem 2rem;
-//   }
-// `;
-
-// const SAppMain = styled.div`
-//   --width: 116rem;
-
-//   width: var(--width);
-// `;
-
-// // progress bars on scrolling between sections
-// const ProgressContainer = styled.div`
-//   --width: calc(12rem - 1.2rem);
-
-//   display: flex;
-//   align-items: flex-start;
-//   justify-content: center;
-//   width: var(--width);
-// `;
+import AboutWrapper from './components/sections/about/aboutWrapper';
+import ExperienceWrapper from './components/sections/experience/experienceWrapper';
+import ProjectsWrapper from './components/sections/projects/projectsWrapper';
+import ContactWrapper from './components/sections/contact/contactWrapper';
 
 function App() {
+  const [sectionIndex, setSectionIndex] = useState(0);
+  const {
+    measureRef: aboutMeasureRef,
+    sectionHeight: aboutSectionHeight,
+    intersectionRef: aboutSectionRef,
+    inView: isAboutSectionInView,
+  } = useSectionHeight({ optionalTabIndex: null });
+  const {
+    measureRef: expMeasureRef,
+    sectionHeight: expSectionHeight,
+    intersectionRef: expSectionRef,
+    inView: isExpSectionInView,
+  } = useSectionHeight({ optionalTabIndex: sectionIndex });
+  const {
+    measureRef: projectsMeasureRef,
+    sectionHeight: projectsSectionHeight,
+    intersectionRef: projectsSectionRef,
+    inView: isProjectsSectionInView,
+  } = useSectionHeight({ optionalTabIndex: null });
+  const {
+    measureRef: contactMeasureRef,
+    sectionHeight: contactSectionHeight,
+    intersectionRef: contactSectionRef,
+    inView: isContactSectionInView,
+  } = useSectionHeight({ optionalTabIndex: null });
+
   return (
     <>
-      {/* <SAppWrapper>
-        <ProgressContainer>
-          <Progress />
-        </ProgressContainer>
+      <Section
+        $width='100%'
+        $maxWidth='100%'
+        $minHeight='auto'
+      >
+        <Div
+          className='progress-content'
+          $gap='4rem'
+        >
+          <Progress
+            sectionsHeights={[
+              aboutSectionHeight,
+              expSectionHeight,
+              projectsSectionHeight,
+              contactSectionHeight,
+            ]}
+          />
 
-        <SAppMain>
-          <Header />
+          <Div
+            $direction='column'
+            $gap='20rem'
+            $width='100%'
+            $maxWidth='100%'
+            $minHeight='auto'
+          >
+            <AboutWrapper
+              measureRef={aboutMeasureRef}
+              intersectionRef={aboutSectionRef}
+              inView={isAboutSectionInView}
+            />
 
-          <Experience />
+            <ExperienceWrapper
+              sectionIndex={sectionIndex}
+              setSectionIndex={setSectionIndex}
+              measureRef={expMeasureRef}
+              intersectionRef={expSectionRef}
+              inView={isExpSectionInView}
+            />
 
-          <Projects />
+            <ProjectsWrapper
+              measureRef={projectsMeasureRef}
+              intersectionRef={projectsSectionRef}
+              inView={isProjectsSectionInView}
+            />
 
-          <Contact />
-        </SAppMain>
-      </SAppWrapper> */}
-
-      <Test />
+            <ContactWrapper
+              measureRef={contactMeasureRef}
+              intersectionRef={contactSectionRef}
+              inView={isContactSectionInView}
+            />
+          </Div>
+        </Div>
+      </Section>
 
       <Toaster
         position='top-center'
