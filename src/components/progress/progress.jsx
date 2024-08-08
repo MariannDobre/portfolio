@@ -19,11 +19,11 @@ const SProgress = styled.div`
     padding-left: 1.8rem;
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     padding-left: 1.6rem;
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     padding-left: 1.4rem;
   }
 
@@ -44,12 +44,12 @@ const Circle = styled.div`
   border: 0.25rem solid var(--clr-gray-dark);
   border-radius: var(--rounded);
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     width: var(--dimensions-laptop);
     height: var(--dimensions-laptop);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     width: var(--dimensions-tablet);
     height: var(--dimensions-tablet);
   }
@@ -96,12 +96,12 @@ const Section = styled.div`
     height: var(--dimension-laptop-lg);
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     width: var(--dimension-laptop);
     height: var(--dimension-laptop);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     width: var(--dimension-tablet);
     height: var(--dimension-tablet);
 
@@ -229,6 +229,11 @@ function Progress({ sectionsHeights }) {
     return barHeight;
   };
 
+  // console.log('about bar: ', sectionsHeights[0]);
+  // console.log('exp bar: ', sectionsHeights[1]);
+  // console.log('projects bar: ', sectionsHeights[2]);
+  // console.log('contact bar: ', sectionsHeights[3]);
+
   return (
     <SProgress>
       <Circle className='intro-circle' />
@@ -251,16 +256,6 @@ function Progress({ sectionsHeights }) {
         ref={aboutBar}
         className={isAboutBarInView ? 'bar-visible' : 'bar-hidden'}
         $width='0.3rem'
-        // section height from clientHeight + the gap between sections - icons size - bar margins on Y axis
-        // $height={
-        //   window.innerWidth <= 598
-        //     ? `calc(${
-        //         sectionsHeights[0]
-        //       }px + 20rem - ${iconSize()} - (2 * 1.6rem) + 2.8rem)`
-        //     : `calc(${
-        //         sectionsHeights[0]
-        //       }px + 20rem - ${iconSize()} - (2 * 1.6rem))`
-        // }
         $height={getAboutBarHeight()}
         $background='linear-gradient(to bottom,  var(--clr-violet-400) 15%, var(--clr-sky-600), var(--clr-emerald-600))'
         $y='1.6rem'
@@ -275,16 +270,6 @@ function Progress({ sectionsHeights }) {
         ref={expBar}
         className={isExpBarInView ? 'bar-visible' : 'bar-hidden'}
         $width='0.3rem'
-        // section height from clientHeight + the gap between sections - icons size - bar margins on Y axis
-        // $height={
-        //   window.innerWidth <= 598
-        //     ? `calc(${
-        //         sectionsHeights[1]
-        //       }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY} - 2.8rem)`
-        //     : `calc(${
-        //         sectionsHeights[1]
-        //       }px + ${sectionsGap} - ${iconSize()} - ${barMarginsY})`
-        // }
         $height={getExpBarHeight()}
         $background='linear-gradient(to bottom,  var(--clr-emerald-600) 15%, var(--clr-emerald-300), var(--clr-orange-400))'
         $y='1.6rem'

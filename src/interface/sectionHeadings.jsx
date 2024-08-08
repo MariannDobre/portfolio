@@ -19,11 +19,11 @@ const StyledSectionTitle = styled.h1`
     font-size: var(--font-size-3xl);
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: var(--font-size-2xl);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: var(--font-size-xl);
   }
 
@@ -49,11 +49,11 @@ const StyledSectionSubtitle = styled.p`
     font-size: calc(var(--font-size-lg) - 0.2rem);
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: var(--font-size-md);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: calc(var(--font-size-md) - 0.2rem);
   }
 

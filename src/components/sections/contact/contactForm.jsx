@@ -22,11 +22,11 @@ const Form = styled.form`
     max-width: var(--max-width-laptop-lg);
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     max-width: var(--max-width-laptop);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     max-width: var(--max-width-tablet);
   }
 
@@ -46,7 +46,7 @@ const Label = styled.label`
   word-spacing: 0.15rem;
   margin-bottom: 0.4rem;
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: calc(var(--font-size-base) - 0.1rem);
     letter-spacing: 0.1rem;
     word-spacing: 0.1rem;
@@ -80,7 +80,7 @@ const Input = styled.input`
     outline: 0.15rem solid var(--clr-rose-300);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
     letter-spacing: 0.1rem;
     word-spacing: 0.1rem;
@@ -112,7 +112,7 @@ const Message = styled.textarea`
     outline: 0.15rem solid var(--clr-rose-300);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
     letter-spacing: 0.1rem;
     word-spacing: 0.1rem;

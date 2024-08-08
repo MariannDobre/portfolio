@@ -13,11 +13,11 @@ const StyledFeatures = styled.div`
   flex-direction: column;
   gap: 2rem;
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     gap: 1.6rem;
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px) {
     gap: 1.4rem;
   }
 
@@ -69,7 +69,7 @@ const Button = styled.span`
     }
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     width: var(--feature-dimension-laptop);
     height: var(--feature-dimension-laptop);
 
@@ -79,7 +79,7 @@ const Button = styled.span`
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px) {
     width: var(--feature-dimension-tablet);
     height: var(--feature-dimension-tablet);
 

@@ -17,12 +17,12 @@ const Wrapper = styled.div`
     padding: 1.4rem 1.4rem 2.8rem 0;
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     gap: 1.2rem;
     padding: 1.2rem 1.2rem 2.4rem 0;
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     gap: 1rem;
     padding: 1rem 1rem 2rem 0;
   }
@@ -42,11 +42,11 @@ const TabTitle = styled.h2`
     font-size: calc(var(--font-size-base) - 0.1rem);
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: calc(var(--font-size-base) - 0.2rem);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
   }
 
@@ -60,11 +60,11 @@ const TabSubtitle = styled.p`
   letter-spacing: 0.1rem;
   word-spacing: 0.1rem;
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: var(--font-size-sm);
   }
 `;
@@ -75,17 +75,14 @@ const Description = styled.p`
   letter-spacing: 0.1rem;
   word-spacing: 0.1rem;
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     &.hidden {
       display: none;
     }
-  }
-
-  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -108,11 +105,8 @@ const ListItem = styled.li`
     color: var(--clr-emerald-400);
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: var(--font-size-sm);
-  }
-
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
   }
 `;
 
@@ -124,11 +118,11 @@ const Platform = styled.p`
   font-size: calc(var(--font-size-base) - 0.2rem);
   letter-spacing: 0.1rem;
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: var(--font-size-sm);
   }
 `;

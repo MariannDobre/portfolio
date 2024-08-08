@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { useInView } from 'react-intersection-observer';
 
 export function useSectionHeight({ optionalTabIndex }) {
@@ -6,22 +12,27 @@ export function useSectionHeight({ optionalTabIndex }) {
   const { ref: intersectionRef, inView } = useInView();
   const [sectionHeight, setSectionHeight] = useState(0);
 
-  useEffect(() => {
+  const handleMeasure = useCallback(() => {
     if (measureRef?.current) {
-      setSectionHeight(measureRef?.current?.clientHeight);
+      const newHeight = measureRef?.current?.clientHeight;
+      setSectionHeight(newHeight);
     }
+  }, []);
 
+  useLayoutEffect(() => {
+    handleMeasure();
+  }, [handleMeasure, optionalTabIndex]);
+
+  useEffect(() => {
     const handleResize = () => {
-      if (measureRef?.current) {
-        setSectionHeight(measureRef?.current?.clientHeight);
-      }
+      handleMeasure();
     };
 
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [optionalTabIndex]);
+  }, [handleMeasure]);
 
   return { measureRef, intersectionRef, inView, sectionHeight };
 }

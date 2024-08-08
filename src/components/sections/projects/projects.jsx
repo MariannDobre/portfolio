@@ -18,18 +18,9 @@ const SProject = styled.div`
   width: var(--width);
   height: var(--height);
 
-  @media screen and (max-width: 1364px) {
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     gap: 2rem;
-  }
-
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
-  }
-
-  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -45,10 +36,7 @@ const Name = styled.p`
     font-size: calc(var(--font-size-base) - 0.2rem);
   }
 
-  @media screen and (max-width: 1364px) {
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: calc(var(--font-size-base) - 0.1rem);
 
     span {
@@ -58,15 +46,12 @@ const Name = styled.p`
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: calc(var(--font-size-base) - 0.2rem);
 
     span {
       font-size: var(--font-size-sm);
     }
-  }
-
-  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -78,20 +63,14 @@ const Description = styled.p`
   letter-spacing: 0.1rem;
   word-spacing: 0.1rem;
 
-  @media screen and (max-width: 1364px) {
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
     letter-spacing: 0.05rem;
     word-spacing: 0.05rem;
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     font-size: var(--font-size-sm);
-  }
-
-  @media screen and (max-width: 480px) {
   }
 `;
 

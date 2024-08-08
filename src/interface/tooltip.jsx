@@ -29,7 +29,7 @@ const STooltip = styled.div`
     padding: var(--padding);
     margin-top: var(--margin);
 
-    @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+    @media screen and (max-width: 1024px) {
       font-size: var(--font-size-sm);
       letter-spacing: normal;
       word-spacing: normal;

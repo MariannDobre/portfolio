@@ -12,18 +12,6 @@ export const Blur = styled.span`
   box-shadow: 0 0 ${(props) => props.$blurRadius}
     ${(props) => props.$spreadRadius} ${(props) => props.$shadowColor};
   z-index: ${(props) => props.$zIndex};
-
-  @media screen and (max-width: 1364px) {
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-  }
-
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
-  }
-
-  @media screen and (max-width: 480px) {
-  }
 `;
 
 Blur.defaultProps = {
@@ -50,13 +38,13 @@ export const Bar = styled.div`
     }
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     &.intro-bar {
       height: calc(6.8rem - (2 * 1.6rem) - 2rem - 1rem);
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     &.intro-bar {
       height: calc(6.2rem - (2 * 1.6rem) - 1.8rem - 0.8rem);
     }
@@ -94,7 +82,7 @@ export const Div = styled.div`
     }
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     &.progress-content {
       gap: 3.2rem;
     }
@@ -120,7 +108,7 @@ export const Div = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     &.progress-content {
       gap: 2.8rem;
     }
@@ -189,18 +177,6 @@ export const Section = styled.section`
   min-height: ${(props) => props.$minHeight || 'auto'};
   background-color: ${(props) => props.$bgColor || 'transparent'};
   margin-bottom: ${(props) => props.$marginBottom || '0'};
-
-  @media screen and (max-width: 1364px) {
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-  }
-
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
-  }
-
-  @media screen and (max-width: 480px) {
-  }
 `;
 
 // BASIC HTML ELEMENTS
@@ -223,22 +199,16 @@ export const Span = styled.span`
   letter-spacing: ${(props) => props.$ltrSpacing || '0'};
   word-spacing: ${(props) => props.$wordSpacing || '0'};
 
-  @media screen and (max-width: 1364px) {
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     &.exp-tab-content-span {
       font-size: calc(var(--font-size-base) - 0.3rem);
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     &.exp-tab-content-span {
       font-size: var(--font-size-sm);
     }
-  }
-
-  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -276,7 +246,7 @@ export const Link = styled.a`
     }
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     &.exp-tab-content-link {
       font-size: calc(var(--font-size-base) - 0.3rem);
     }
@@ -287,7 +257,7 @@ export const Link = styled.a`
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     &.exp-tab-content-link {
       font-size: var(--font-size-sm);
     }
@@ -364,7 +334,7 @@ export const CustomButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     &.exp-tab-selector-btn {
       width: 16rem;
       font-size: calc(var(--font-size-base) - 0.2rem);
@@ -372,7 +342,7 @@ export const CustomButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     &.exp-tab-selector-btn {
       width: 14rem;
       font-size: calc(var(--font-size-base) - 0.3rem);
@@ -415,17 +385,14 @@ export const Image = styled.img`
 
   transition: all 0.5s ease;
 
-  @media screen and (max-width: 1364px) {
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     &.project-image {
       max-width: 60rem;
       height: 32rem;
     }
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     &.project-image {
       max-width: 44rem;
       height: 28rem;

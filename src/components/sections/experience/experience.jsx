@@ -9,7 +9,6 @@ const StyledExperienceContent = styled.aside`
   display: flex;
   gap: 1.6rem;
   max-width: var(--max-width);
-  /* background-color: var(--bg-clr-secondary); */
 
   transition: height 0.35s ease;
 
@@ -23,46 +22,14 @@ const StyledExperienceContent = styled.aside`
 
   @media screen and (max-width: 1364px) {
     gap: 1.4rem;
-
-    &.course-height {
-      height: var(--height-course-laptop-lg);
-    }
-
-    &.learning-height {
-      height: var(--height-learning-laptop-lg);
-    }
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     gap: 1.2rem;
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     gap: 1rem;
-
-    &.course-height {
-      height: var(--height-course-tablet);
-    }
-
-    &.learning-height {
-      height: var(--height-learning-tablet);
-    }
-  }
-
-  @media screen and (max-width: 668px), screen and (max-height: 664px) {
-    &.course-height {
-      height: var(--height-course-tablet-2);
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    &.course-height {
-      height: var(--height-course-mobile);
-    }
-
-    &.learning-height {
-      height: var(--height-learning-mobile);
-    }
   }
 `;
 

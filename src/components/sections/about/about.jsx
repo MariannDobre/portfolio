@@ -28,14 +28,8 @@ const StyledAboutContent = styled.aside`
     height: var(--height-laptop-lg);
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     height: var(--height-laptop);
-  }
-
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
-  }
-
-  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -51,7 +45,7 @@ const Branch = styled.span`
     font-size: var(--font-size-base);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px) {
     font-size: calc(var(--font-size-sm) + 0.1rem);
 
     svg {
@@ -94,7 +88,7 @@ const Dot = styled.span`
   height: var(--dot-dimensions-default);
   border-radius: 50%;
 
-  @media screen and (max-width: 768px), screen and (max-height: 664px) {
+  @media screen and (max-width: 768px) {
     width: var(--dot-dimensions-tablet);
     height: var(--dot-dimensions-tablet);
   }

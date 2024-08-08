@@ -11,11 +11,11 @@ const StyledFiles = styled.div`
   width: 100%;
   height: 100%;
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     gap: 1.6rem;
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px) {
     gap: 1.4rem;
   }
 
@@ -56,13 +56,7 @@ const Button = styled.span`
     border: none;
   }
 
-  @media screen and (max-width: 1364px) {
-  }
-
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
-  }
-
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px) {
     font-size: var(--font-size-sm);
     padding: 0.4rem 0.8rem;
 
@@ -97,11 +91,11 @@ const Sentence = styled.p`
     font-size: calc(var(--font-size-base) - 0.1rem);
   }
 
-  @media screen and (max-width: 1024px), screen and (max-height: 724px) {
+  @media screen and (max-width: 1024px) {
     font-size: calc(var(--font-size-base) - 0.2rem);
   }
 
-  @media screen and (max-width: 768px), screen and (max-height: 664) {
+  @media screen and (max-width: 768px) {
     font-size: calc(var(--font-size-base) - 0.3rem);
     line-height: 1.3;
   }
