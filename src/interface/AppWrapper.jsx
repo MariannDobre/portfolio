@@ -6,6 +6,9 @@ import PageAbout from '../components/sections/about/PageAbout';
 import GitHubProfile from '../components/sections/GitHubProfile';
 import PageHeading from '../components/PageHeading';
 import Course from '../components/sections/course/Course';
+import Projects from '../components/sections/projects/Projects';
+import ContactForm from '../components/sections/contact/Contact';
+import Footer from '../components/sections/footer/Footer';
 import Bar from './Bar';
 import {
   FaUserAlt,
@@ -14,6 +17,7 @@ import {
   FaTrophy,
   FaWrench,
 } from 'react-icons/fa';
+import { GrMail } from 'react-icons/gr';
 
 function AppWrapper() {
   const { theme } = useContext(ThemeContext);
@@ -86,6 +90,29 @@ function AppWrapper() {
         icon={<FaWrench />}
         sectionTitle='My Personal Projects'
       />
+
+      <Projects />
+
+      <Bar
+        barColorLight='bg-gradient-to-b from-transparent to-blue-400'
+        barColorDark='bg-gradient-to-b from-transparent to-blue-500'
+        height='h-[440px]'
+      />
+
+      <SectionMarker
+        icon={<GrMail />}
+        sectionTitle='Say Hello'
+      />
+
+      <ContactForm />
+
+      <Bar
+        barColorLight='bg-gradient-to-b from-blue-400 to-transparent'
+        barColorDark='bg-gradient-to-b from-blue-500 to-transparent'
+        height='h-[440px]'
+      />
+
+      <Footer />
     </div>
   );
 }
