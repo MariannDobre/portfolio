@@ -9,9 +9,7 @@ function UserImage() {
   return (
     <div className='relative overflow-hidden shadow-xl outline outline-1 outline-bgColorContrast rounded-md'>
       <span
-        className={`bg-bgColorContrast w-44 py-2 ${
-          theme === 'light' ? 'text-blue-400' : 'text-blue-500'
-        } text-lg text-center absolute top-6 -left-10 z-50 -rotate-45 tracking-wider`}
+        className={`bg-bgColorContrast w-44 py-2 text-textColorSecondary text-lg text-center absolute top-6 -left-10 z-50 -rotate-45 tracking-wider`}
       >
         What's up
       </span>
@@ -19,9 +17,7 @@ function UserImage() {
         <img />
       ) : (
         <div
-          className={`flex items-center justify-center bg-bgColorMain ${
-            theme === 'light' ? 'text-blue-400' : 'text-blue-500'
-          } w-72 min-h-[28rem] text-5xl rounded-md`}
+          className={`flex items-center justify-center bg-bgColorMain text-textColorSecondary w-72 min-h-[28rem] text-5xl rounded-md`}
         >
           <FaUserAlt />
         </div>

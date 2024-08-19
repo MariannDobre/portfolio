@@ -12,7 +12,9 @@ module.exports = {
         bgColorContrast: 'rgba(var(--bgColor-contrast))',
 
         textColorMain: 'rgba(var(--text-color-primary))',
-        textColorSecondary: '',
+        textColorMainHover: 'rgba(var(--text-color-primary-hover))',
+
+        textColorSecondary: 'rgba(var(--text-color-secondary))',
       },
     },
   },

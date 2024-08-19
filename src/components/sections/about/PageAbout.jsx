@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { scroller } from 'react-scroll';
-import { ThemeContext } from '../../../context/ThemeContext';
 import UserImage from './UserImage';
 import AboutUser from './AboutUser';
 import { FaArrowDown } from 'react-icons/fa';
@@ -15,8 +14,6 @@ const scrollToSection = (sectionId) => {
 };
 
 function PageAbout() {
-  const { theme } = useContext(ThemeContext);
-
   return (
     <div
       id='about'
@@ -27,9 +24,7 @@ function PageAbout() {
       <AboutUser />
 
       <button
-        className={`absolute left-3 bottom-3 bg-bgColorMain text-textColorMain text-lg p-3 rounded-full shadow-xl outline-0 transition-all duration-300 ${
-          theme === 'light' ? 'hover:text-bgColorMain' : 'hover:text-blue-500'
-        } hover:bg-bgColorMainDark`}
+        className='absolute left-3 bottom-3 text-textColorMain text-lg p-3 rounded-full shadow-xl outline outline-1 outline-bgColorContrast border-none hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300'
         onClick={() => scrollToSection('what-i-know')}
       >
         <FaArrowDown />

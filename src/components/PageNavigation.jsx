@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import { useClickOutside } from '../hooks/useClickOutside';
 import { ThemeContext } from '../context/ThemeContext';
 import { IoMdSunny, IoMdMoon } from 'react-icons/io';
+import Tooltip from './tooltip/Tooltip';
 
 const navLinks = [
   { id: 1, label: 'about', sectionId: 'about' },
@@ -26,7 +27,7 @@ function PageNavigation() {
     right: 0,
   };
   const themeButtonsStyles = `flex items-center gap-2 w-full pl-3 py-1 ${
-    theme === 'light' ? 'hover:bg-slate-300/35' : 'hover:bg-gray-100/10'
+    theme === 'light' ? 'hover:bg-slate-300/35' : 'hover:bg-neutral-100/20'
   } transition-all duration-300`;
 
   const handleShowThemeMenu = (event) => {
@@ -43,11 +44,7 @@ function PageNavigation() {
         {navLinks.map(({ id, label, sectionId }) => (
           <li key={id}>
             <Link
-              className={`capitalize tracking-wide outline-0 border-none outline-none no-underline cursor-pointer ${
-                theme === 'light'
-                  ? 'hover:text-blue-400 focus-visible:text-blue-400'
-                  : 'hover:text-blue-500 focus-visible:text-blue-500'
-              } transition-all duration-300`}
+              className='capitalize tracking-wide outline-0 border-none outline-none no-underline cursor-pointer hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300'
               to={sectionId}
               spy={true}
               smooth={true}
@@ -61,17 +58,18 @@ function PageNavigation() {
         ))}
       </ul>
 
-      <button
-        className={`text-lg outline-0 border-none ${
-          theme === 'light'
-            ? 'hover:text-blue-400 focus-visible:text-blue-400'
-            : 'hover:text-blue-500 focus-visible:text-blue-500'
-        } transition-all duration-300`}
-        onClick={handleShowThemeMenu}
-        aria-label='Toggle menu for theme changing'
+      <Tooltip
+        tooltipContent={`Turn the light ${theme === 'light' ? 'off' : 'on'}`}
+        position='bottom-left'
       >
-        {theme === 'light' ? <IoMdSunny /> : <IoMdMoon />}
-      </button>
+        <button
+          className='text-lg outline-0 border-none hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300'
+          onClick={handleShowThemeMenu}
+          aria-label='Toggle menu for theme changing'
+        >
+          {theme === 'light' ? <IoMdSunny /> : <IoMdMoon />}
+        </button>
+      </Tooltip>
 
       <div
         ref={themeMenuRef}
@@ -82,7 +80,7 @@ function PageNavigation() {
       >
         <button
           className={`${themeButtonsStyles}  ${
-            theme === 'light' ? 'text-blue-400' : ''
+            theme === 'light' ? 'text-textColorSecondary' : ''
           }`}
           value='light'
           onClick={() => setTheme('light')}
@@ -93,7 +91,7 @@ function PageNavigation() {
 
         <button
           className={`${themeButtonsStyles}  ${
-            theme === 'dark' ? 'text-blue-500' : ''
+            theme === 'dark' ? 'text-textColorSecondary' : ''
           }`}
           value='dark'
           onClick={() => setTheme('dark')}

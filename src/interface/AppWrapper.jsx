@@ -29,8 +29,8 @@ function AppWrapper() {
       <Hero />
 
       <Bar
-        barColorLight='bg-gradient-to-b from-transparent to-blue-400'
-        barColorDark='bg-gradient-to-b from-transparent to-blue-500'
+        barColorLight='bg-gradient-to-b from-transparent to-gray-700'
+        barColorDark='bg-gradient-to-b from-transparent to-textColorSecondary'
         height='h-[440px]'
       />
 
@@ -42,8 +42,8 @@ function AppWrapper() {
       <PageAbout />
 
       <Bar
-        barColorLight='bg-gradient-to-b from-transparent to-blue-400'
-        barColorDark='bg-gradient-to-b from-transparent to-blue-500'
+        barColorLight='bg-gradient-to-b from-transparent to-gray-700'
+        barColorDark='bg-gradient-to-b from-transparent to-textColorSecondary'
         height='h-[440px]'
       />
 
@@ -55,8 +55,8 @@ function AppWrapper() {
       <GitHubProfile />
 
       <Bar
-        barColorLight='bg-blue-400'
-        barColorDark='bg-blue-500'
+        barColorLight='bg-gray-700'
+        barColorDark='bg-textColorSecondary'
         height='h-[440px]'
       />
 
@@ -68,8 +68,8 @@ function AppWrapper() {
       <PageHeading />
 
       <Bar
-        barColorLight='bg-gradient-to-b from-transparent to-blue-400'
-        barColorDark='bg-gradient-to-b from-transparent to-blue-500'
+        barColorLight='bg-gradient-to-b from-transparent to-gray-700'
+        barColorDark='bg-gradient-to-b from-transparent to-textColorSecondary'
         height='h-[440px]'
       />
 
@@ -81,8 +81,8 @@ function AppWrapper() {
       <Course />
 
       <Bar
-        barColorLight='bg-blue-400'
-        barColorDark='bg-blue-500'
+        barColorLight='bg-gray-700'
+        barColorDark='bg-textColorSecondary'
         height='h-[440px]'
       />
 
@@ -94,8 +94,8 @@ function AppWrapper() {
       <Projects />
 
       <Bar
-        barColorLight='bg-gradient-to-b from-transparent to-blue-400'
-        barColorDark='bg-gradient-to-b from-transparent to-blue-500'
+        barColorLight='bg-gradient-to-b from-transparent to-gray-700'
+        barColorDark='bg-gradient-to-b from-transparent to-textColorSecondary'
         height='h-[440px]'
       />
 
@@ -107,8 +107,8 @@ function AppWrapper() {
       <ContactForm />
 
       <Bar
-        barColorLight='bg-gradient-to-b from-blue-400 to-transparent'
-        barColorDark='bg-gradient-to-b from-blue-500 to-transparent'
+        barColorLight='bg-gradient-to-b from-gray-700 to-transparent'
+        barColorDark='bg-gradient-to-b from-textColorSecondary to-transparent'
         height='h-[440px]'
       />
 
@@ -131,11 +131,7 @@ function SectionMarker({ icon, sectionTitle }) {
         >
           {icon}
         </p>
-        <span
-          className={`${
-            theme === 'light' ? 'bg-blue-400' : 'bg-blue-500'
-          } text-4xl w-9 h-9 rounded-full absolute left-[18px] blur-[18px]`}
-        ></span>
+        <span className='bg-textColorSecondary text-4xl w-9 h-9 rounded-full absolute left-[18px] blur-[18px]'></span>
       </div>
 
       <div>
