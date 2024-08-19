@@ -12,10 +12,10 @@
 }
 
 :root {
-  --test: rgb(139, 92, 246);
-  --text-2: rgb(196, 181, 253);
-  --text-3: rgb(253, 164, 175);
-  --text-4: #525252;
+  --test: #020617;
+  --text-2: rgb(15, 23, 42);
+  --text-3: #3b82f6;
+  --text-4: #2563eb;
 
   --main-font-fam: 'Roboto Mono', monospace;
 }
@@ -58,16 +58,22 @@ img {
 
 /* the classes that are toggled between theme selection */
 .light {
-  --bgColor-primary: ;
+  --bgColor-primary: 250, 250, 250;
   --bgColor-primary-dark: ;
 
-  --bgColor-secondary: ;
-  --bgColor-contrast: ;
+  /* gray-200: #e5e7eb from tailwind */
+  --bgColor-secondary: 229, 231, 235;
 
-  --text-color-primary: ;
-  --text-color-primary-hover: ;
+  /* gray-400: #9ca3af from tailwind */
+  --bgColor-contrast: 156, 163, 175;
 
-  --text-color-secondary: ;
+  /* blue-slate-950: #020617 from tailwind */
+  --text-color-primary: 2, 6, 23;
+  /* blue-600: #2563eb from tailwind */
+  --text-color-primary-hover: 37, 99, 235;
+
+  /* blue-500: #3b82f6 from tailwind */
+  --text-color-secondary: 59, 130, 246;
 }
 
 .dark {

@@ -96,7 +96,7 @@ const cardData = [
 
     cardColorLight: 'text-emerald-600',
     outlineColorLight: 'outline-emerald-600',
-    shadowColorLight: 'shadow-emerald-600',
+    shadowColorLight: 'shadow-emerald-600/35',
 
     cardColorDark: 'text-emerald-700',
     outlineColorDark: 'outline-emerald-700',
