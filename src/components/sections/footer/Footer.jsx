@@ -3,6 +3,9 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
 import Tooltip from '../../tooltip/Tooltip';
 
+const linksStyles =
+  'outline-none border-none cursor-pointer text-textColorMain text-2xl hover:text-textColorMainHover focus-visible:text-textColorMainHover no-underline block transition-all duration-300';
+
 function Footer() {
   return (
     <div className='flex items-center justify-center gap-12 pt-8 mt-12 border-t-[1px] border-bgColorContrast'>
@@ -11,7 +14,7 @@ function Footer() {
         position='top-left'
       >
         <a
-          className='outline-none border-none cursor-pointer text-stone-200 text-2xl hover:text-blue-500 focus-visible:text-blue-500 no-underline block transition-all duration-300'
+          className={linksStyles}
           href='https://www.linkedin.com/in/marian-dobre-/'
           target='_blank'
           rel='noopener noreferrer'
@@ -22,7 +25,7 @@ function Footer() {
 
       <Tooltip tooltipContent='GitHub Profile'>
         <a
-          className='outline-none border-none cursor-pointer text-stone-200 text-2xl hover:text-blue-500 focus-visible:text-blue-500 no-underline block transition-all duration-300'
+          className={linksStyles}
           href='https://github.com/MariannDobre'
           target='_blank'
           rel='noopener noreferrer'
@@ -35,7 +38,7 @@ function Footer() {
         tooltipContent='mariandobre002@gmail.com'
         position='top-right'
       >
-        <button className='outline-none border-none cursor-pointer text-stone-200 text-2xl hover:text-blue-500 focus-visible:text-blue-500 no-underline block transition-all duration-300'>
+        <button className={linksStyles}>
           <GrMail />
         </button>
       </Tooltip>

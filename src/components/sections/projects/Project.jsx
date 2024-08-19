@@ -50,18 +50,18 @@ function Project() {
 
         <div className='flex flex-col items-center gap-6 w-full p-3 h-72'>
           <div className='flex flex-col self-start gap-1'>
-            <h1 className='text-blue-500'>{projectName}</h1>
+            <h1 className='text-textColorMainHover'>{projectName}</h1>
 
-            <p className='text-blue-400'>{projectType}</p>
+            <p className='text-textColorSecondary'>{projectType}</p>
           </div>
 
-          <p className='text-sm text-stone-200 tracking-wide leading-6'>
+          <p className='text-sm text-textColorMain tracking-wide leading-6'>
             {about}
           </p>
 
-          <div className='text-stone-200 text-xl flex items-center gap-3 self-end mt-auto'>
+          <div className='text-textColorMain text-xl flex items-center gap-3 self-end mt-auto'>
             <a
-              className='hover:text-blue-500 focus-visible:text-blue-500 transition-all duration-300'
+              className='outline-none hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300'
               href={githubRepo}
               rel='noopener noreferrer'
             >
@@ -69,7 +69,7 @@ function Project() {
             </a>
 
             <a
-              className='hover:text-blue-500 focus-visible:text-blue-500 transition-all duration-300'
+              className='outline-none hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300'
               href={appLink}
               rel='noopener noreferrer'
             >

@@ -5,17 +5,13 @@ function Course() {
   return (
     <div className='flex flex-col gap-6 p-3 w-full'>
       <div className='flex flex-col gap-1'>
-        <p className='text-2xl text-stone-200'>
-          <span className='text-3xl uppercase font-medium text-slate-400'>
-            Course name:
-          </span>
+        <p className='text-2xl text-textColorMain'>
+          <span className='text-3xl font-medium text-zinc-500'>Course:</span>
           &nbsp;The Ultimate React Course 2024: React, Next.js, Redux & More
         </p>
 
-        <p className='text-lg text-stone-300'>
-          <span className='text-xl uppercase font-medium text-slate-500'>
-            Note:
-          </span>
+        <p className='text-lg text-violet-200'>
+          <span className='text-xl font-medium text-zinc-600'>Note:</span>
           &nbsp;This is a course that i followed to build my React & React
           Ecosystem foundations
         </p>
@@ -33,11 +29,11 @@ function Course() {
           </div>
 
           <div className='flex flex-col items-center gap-6 h-full p-3'>
-            <p className='text-blue-500 text-lg tracking-wide'>
+            <p className='text-textColorMainHover text-lg tracking-wide'>
               Technologies Used
             </p>
 
-            <ul className='text-stone-200 text-sm tracking-wide grid grid-cols-2 gap-y-3 list-disc marker:text-blue-500'>
+            <ul className='text-textColorMain text-sm tracking-wide grid grid-cols-2 gap-y-3 list-disc marker:text-textColorMainHover'>
               <li>React</li>
 
               <li>React Router Dom</li>
@@ -56,7 +52,7 @@ function Course() {
             </ul>
 
             <a
-              className='text-lg mt-auto text-stone-200 no-underline tracking-wide hover:text-blue-500 focus-visible:text-blue-500 transition-all duration-300'
+              className='text-lg mt-auto text-textColorMain no-underline tracking-wide outline-none hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300'
               href='https://www.udemy.com/certificate/UC-06ab86a2-5b3f-4d2a-beb0-c2eaaed813e2/'
               target='_blank'
               rel='noopener noreferrer'
@@ -67,9 +63,11 @@ function Course() {
         </div>
 
         <div className='flex flex-col gap-6'>
-          <p className='text-blue-500 text-lg tracking-wide'>Topics Covered</p>
+          <p className='text-textColorMainHover text-lg tracking-wide'>
+            Topics Covered
+          </p>
 
-          <ul className='text-stone-200 text-sm tracking-wide grid grid-cols-2 gap-y-3 list-disc list-inside marker:text-blue-500'>
+          <ul className='text-textColorMain text-sm tracking-wide grid grid-cols-2 gap-y-3 list-disc list-inside marker:text-textColorMainHover'>
             <li>
               Working with <strong>Components</strong>,&nbsp;
               <strong>Props</strong>,&nbsp;&&nbsp;<strong>JSX</strong>

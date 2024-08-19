@@ -3,9 +3,9 @@ import { ThemeContext } from '../../../context/ThemeContext';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
-const labelStyles = 'text-blue-500 text-lg tracking-wide';
+const labelStyles = 'text-textColorMainHover text-lg tracking-wide';
 const inputStyles =
-  'bg-bgColorMain w-full text-stone-200 caret-blue-500 rounded-md shadow-lg text-sm tracking-wider px-2 py-1 border-none outline outline-1 outline-bgColorContrast focus-visible:outline-blue-500 transition-all duration-300';
+  'bg-bgColorMain w-full text-textColorMain caret-textColorSecondary rounded-md shadow-lg text-sm tracking-wider px-2 py-1 border-none outline outline-1 outline-bgColorContrast focus-visible:outline-textColorSecondary transition-all duration-300';
 
 function ContactForm() {
   const formRef = useRef();
@@ -87,7 +87,7 @@ function ContactForm() {
         Message
       </label>
       <textarea
-        className='bg-bgColorMain py-1 px-2 text-stone-200 w-full rounded-md shadow-lg text-sm h-52 outline outline-1 outline-bgColorContrast focus-visible:outline-blue-500 transition-all duration-300'
+        className='bg-bgColorMain py-1 px-2 text-textColorMain w-full rounded-md shadow-lg text-sm h-52 outline outline-1 outline-bgColorContrast focus-visible:outline-textColorSecondary transition-all duration-300'
         id='message'
         name='message'
         value={message}
@@ -96,7 +96,7 @@ function ContactForm() {
       />
 
       <button
-        className='bg-bgColorMain shadow-lg rounded-md tracking-wide py-1 text-lg text-stone-200 outline outline-1 outline-bgColorContrast border-none hover:text-blue-500 hover:outline-blue-500 focus-visible:text-blue-500 focus-visible:outline-blue-500 transition-all duration-300'
+        className='bg-bgColorMain shadow-lg rounded-md tracking-wide py-1 text-lg text-textColorMain outline outline-1 outline-bgColorContrast border-none hover:text-textColorSecondary hover:outline-textColorSecondary focus-visible:text-textColorSecondary focus-visible:outline-textColorSecondary transition-all duration-300'
         disabled={isSubmiting}
       >
         {isSubmiting ? 'Sending email...' : 'Send'}
