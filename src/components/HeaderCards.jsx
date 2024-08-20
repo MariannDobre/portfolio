@@ -5,7 +5,11 @@ import { RiTailwindCssFill } from 'react-icons/ri';
 import { SiJavascript } from 'react-icons/si';
 
 // css styles for responsive layout
-const responsiveStyles = 'grid sm:grid 2xl:flex 2xl:items-center 2xl:gap-6';
+const responsiveContainer =
+  'grid grid-cols-2 gap-y-8 gap-x-8 sm:grid 2xl:flex 2xl:items-center 2xl:gap-6';
+
+const responsiveCard =
+  'max-w-52 h-[420px] sm:max-w-56 sm:h-[452px] 2xl:max-w-60 2xl:min-h-full';
 
 // cards data
 const cardData = [
@@ -87,15 +91,15 @@ function HeaderCards() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={responsiveStyles}>
+    <div className={responsiveContainer}>
       {cardData.map((card) => (
         <div
           key={card.id}
-          className={`flex flex-col gap-1 items-center bg-bgColorMain w-60 min-h-full rounded-md p-6 shadow-lg ${
+          className={`flex flex-col gap-1 items-center bg-bgColorMain rounded-md p-6 shadow-lg ${
             theme === 'light' ? 'shadow-blue-500/35' : card.shadowColorDark
           } cursor-pointer outline outline-1 ${
             theme === 'light' ? 'outline-blue-500' : card.outlineColorDark
-          } hover:-translate-y-8 hover:origin-bottom hover:-rotate-12 transition-all duration-300`}
+          } hover:-translate-y-8 hover:origin-bottom hover:-rotate-12 transition-all duration-300 ${responsiveCard}`}
         >
           <div>
             <abbr title={card.abbr}>
@@ -118,7 +122,7 @@ function HeaderCards() {
               {card.cardTitle}
             </p>
 
-            <p className='text-sm text-textColorMain tracking-wide'>
+            <p className='text-xs leading-5 text-textColorMain tracking-wide sm:text-sm'>
               {card.cardDescription}
             </p>
           </div>

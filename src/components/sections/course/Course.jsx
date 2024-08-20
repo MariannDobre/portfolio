@@ -1,9 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { SiUdemy } from 'react-icons/si';
 import { ThemeContext } from '../../../context/ThemeContext';
 
 function Course() {
+  const [expandList, setExpandList] = useState(false);
   const { theme } = useContext(ThemeContext);
+
+  const handleExpandList = () => {
+    setExpandList((value) => !value);
+  };
+  console.log(expandList);
 
   return (
     <div className='flex flex-col gap-6 p-3 w-full'>
@@ -84,6 +90,13 @@ function Course() {
             </a>
           </div>
         </div>
+
+        <button
+          className={`block text-textColorSecondary sm:block lg:hidden`}
+          onClick={handleExpandList}
+        >
+          {expandList ? 'Hide Covered Topics' : 'Expand Covered Topics'}
+        </button>
 
         <div className='flex flex-col gap-6'>
           <p className='text-textColorMainHover text-lg tracking-wide'>
