@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { SiUdemy } from 'react-icons/si';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 function Course() {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div className='flex flex-col gap-6 p-3 w-full'>
       <div className='flex flex-col gap-1'>
         <p className='text-2xl text-textColorMain'>
-          <span className='text-3xl font-medium text-zinc-500'>Course:</span>
+          <span
+            className={`text-3xl font-medium ${
+              theme === 'light' ? 'text-slate-600' : 'text-zinc-500'
+            }`}
+          >
+            Course:
+          </span>
           &nbsp;The Ultimate React Course 2024: React, Next.js, Redux & More
         </p>
 
-        <p className='text-lg text-violet-200'>
-          <span className='text-xl font-medium text-zinc-600'>Note:</span>
+        <p
+          className={`text-lg ${
+            theme === 'light' ? 'text-blue-300' : 'text-violet-200'
+          }`}
+        >
+          <span
+            className={`text-xl font-medium ${
+              theme === 'light' ? 'text-slate-700' : 'text-zinc-600'
+            }`}
+          >
+            Note:
+          </span>
           &nbsp;This is a course that i followed to build my React & React
           Ecosystem foundations
         </p>
@@ -19,7 +38,11 @@ function Course() {
 
       <div className='flex gap-6 max-w-full min-h-[480px]'>
         <div className='flex flex-col items-center w-96 min-h-full bg-bgColorSecondary shadow-xl rounded-md outline outline-1 outline-bgColorContrast'>
-          <div className='flex items-center justify-center bg-stone-200 w-full min-h-36 rounded-md border-b-[1px] border-bgColorContrast shadow-lg'>
+          <div
+            className={`flex items-center justify-center ${
+              theme === 'light' ? 'bg-stone-100' : 'bg-stone-200'
+            } w-full min-h-36 rounded-md border-b-[1px] border-bgColorContrast shadow-lg`}
+          >
             <p className='flex items-start text-3xl text-fuchsia-600 font-bold'>
               <span className='-mr-1 -mt-[1px]'>
                 <SiUdemy />

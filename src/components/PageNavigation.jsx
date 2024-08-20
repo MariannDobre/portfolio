@@ -27,7 +27,7 @@ function PageNavigation() {
     right: 0,
   };
   const themeButtonsStyles = `flex items-center gap-2 w-full pl-3 py-1 ${
-    theme === 'light' ? 'hover:bg-slate-300/35' : 'hover:bg-neutral-100/20'
+    theme === 'light' ? 'hover:bg-slate-950/20' : 'hover:bg-neutral-100/20'
   } transition-all duration-300`;
 
   const handleShowThemeMenu = (event) => {

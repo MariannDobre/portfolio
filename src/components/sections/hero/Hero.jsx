@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../../context/ThemeContext';
 
+const responsiveStyles = 'sm:';
+
 function Hero() {
   const { theme } = useContext(ThemeContext);
 
@@ -15,7 +17,11 @@ function Hero() {
       }}
       className='w-full h-[840px] bg-cover bg-center bg-no-repeat flex items-center justify-center shadow-2xl outline outline-1 outline-bgColorContrast'
     >
-      <h1 className='text-8xl text-textColorMain text-center font-black uppercase tracking-[0.2em]'>
+      <h1
+        className={`text-8xl ${
+          theme === 'light' ? 'text-stone-200' : 'text-textColorMain'
+        } text-center font-black uppercase tracking-[0.2em]`}
+      >
         Self Taught Web Developer
       </h1>
     </div>
