@@ -120,8 +120,6 @@ function AppWrapper() {
 export default AppWrapper;
 
 function SectionMarker({ icon, sectionTitle }) {
-  const { theme } = useContext(ThemeContext);
-
   return (
     <div className='flex items-center relative gap-6'>
       <div className='flex items-center'>

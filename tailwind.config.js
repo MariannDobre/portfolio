@@ -3,6 +3,10 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: {
+        xs: '480px',
+        '3xl': '1716px',
+      },
       colors: {
         bgColorMain: 'rgba(var(--bgColor-primary))',
         bgColorMainDark: 'rgba(var(--bgColor-primary-dark))',

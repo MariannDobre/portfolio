@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../../context/ThemeContext';
+import React from 'react';
 
 function AboutUser() {
-  const { theme } = useContext(ThemeContext);
-
   return (
     <div className='max-w-[36rem]'>
       <p className='text-sm text-textColorMain leading-8 tracking-wider md:text-base lg:text-lg'>

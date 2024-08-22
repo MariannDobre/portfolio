@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { ThemeContext } from '../../context/ThemeContext';
 
 function GitHubProfile() {
-  const { theme } = useContext(ThemeContext);
-
   return (
     <div className='flex flex-col items-center gap-6 p-3 w-full'>
       <div className='text-4xl text-textColorSecondary sm:text-5xl md:text-6xl lg:text-7xl'>

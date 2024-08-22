@@ -43,23 +43,27 @@ function Project() {
         key={id}
       >
         <img
-          className='w-full h-72 rounded-md shadow-lg grayscale'
+          className='w-full h-44 rounded-md shadow-lg grayscale xs:h-64 sm:h-72 md:h-80 lg:h-52 xl:h-72'
           src={image}
           alt='Project short pic.'
         />
 
-        <div className='flex flex-col items-center gap-6 w-full p-3 h-72'>
+        <div className='flex flex-col items-center gap-6 w-full p-3 h-full'>
           <div className='flex flex-col self-start gap-1'>
-            <h1 className='text-textColorMainHover'>{projectName}</h1>
+            <h1 className='text-sm text-textColorMainHover xs:text-base md:text-lg'>
+              {projectName}
+            </h1>
 
-            <p className='text-textColorSecondary'>{projectType}</p>
+            <p className='text-xs text-textColorSecondary xs:text-sm md:text-base'>
+              {projectType}
+            </p>
           </div>
 
-          <p className='text-sm text-textColorMain tracking-wide leading-6'>
+          <p className='text-xs text-textColorMain tracking-wider leading-6 xs:test-sm md:text-base'>
             {about}
           </p>
 
-          <div className='text-textColorMain text-xl flex items-center gap-3 self-end mt-auto'>
+          <div className='text-textColorMain text-sm flex items-center gap-3 self-end mt-auto xs:text-base sm:text-lg md:text-lg'>
             <a
               className='outline-none hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300'
               href={githubRepo}

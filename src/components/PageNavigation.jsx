@@ -9,9 +9,9 @@ import Tooltip from './tooltip/Tooltip';
 const navLinks = [
   { id: 1, label: 'about', sectionId: 'about' },
   { id: 2, label: 'knowledge', sectionId: 'what-i-know' },
-  { id: 3, label: 'course', sectionId: '' },
-  { id: 4, label: 'projects', sectionId: '' },
-  { id: 5, label: 'contact', sectionId: '' },
+  { id: 3, label: 'course', sectionId: 'course' },
+  { id: 4, label: 'projects', sectionId: 'my-projects' },
+  { id: 5, label: 'contact', sectionId: 'contact-me' },
 ];
 
 function PageNavigation() {

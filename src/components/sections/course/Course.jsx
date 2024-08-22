@@ -11,7 +11,10 @@ function Course() {
   };
 
   return (
-    <div className='flex flex-col sm:flex-col gap-6 p-3 w-full'>
+    <div
+      id='course'
+      className='flex flex-col sm:flex-col gap-6 p-3 w-full'
+    >
       <div className='flex flex-col gap-1'>
         <p className='text-lg text-textColorMain lg:text-xl xl:text-2xl'>
           <span
@@ -41,7 +44,7 @@ function Course() {
         </p>
       </div>
 
-      <div className='flex flex-col sm:flex-col sm:items-start lg:flex-row gap-6 max-w-full min-h-full md:min-h-[520px]'>
+      <div className='flex flex-col sm:flex-col sm:items-start xl:flex-row gap-6 max-w-full min-h-full md:min-h-[520px]'>
         <div className='flex flex-col items-center w-72 min-h-full bg-bgColorSecondary shadow-xl rounded-md outline outline-1 outline-bgColorContrast sm:w-96 md:h-[520px]'>
           <div
             className={`flex items-center justify-center ${
@@ -61,7 +64,7 @@ function Course() {
               Technologies Used
             </p>
 
-            <ul className='text-textColorMain text-xs tracking-wide flex flex-col gap-1 list-disc marker:text-textColorMainHover sm:text-sm sm:grid sm:grid-cols-2 sm:gap-y-3'>
+            <ul className='text-textColorMain text-xs tracking-wide flex flex-col gap-1 list-disc marker:text-textColorMainHover sm:text-sm sm:grid sm:grid-cols-2 sm:gap-y-3 xl:flex xl:flex-col 3xl:grid 3xl:grid-cols-2'>
               <li>React</li>
 
               <li>React Router Dom</li>
@@ -91,7 +94,7 @@ function Course() {
         </div>
 
         <button
-          className={`self-start block text-xs tracking-wide border-none outline-none text-textColorSecondary hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300 sm:block sm:self-start sm:text-sm lg:hidden`}
+          className={`self-start block text-xs tracking-wide border-none outline-none text-textColorSecondary hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300 sm:block sm:self-start sm:text-sm xl:hidden`}
           onClick={handleExpandList}
         >
           {expandList ? 'Hide Covered Topics' : 'Expand Covered Topics'}
@@ -100,7 +103,7 @@ function Course() {
         <div
           className={`flex flex-col gap-6 ${
             expandList ? 'block' : 'hidden'
-          } lg:block`}
+          } xl:block`}
         >
           <p className='text-textColorMainHover text-base tracking-wide sm:text-lg'>
             Topics Covered

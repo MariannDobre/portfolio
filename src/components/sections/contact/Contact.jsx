@@ -43,6 +43,7 @@ function ContactForm() {
 
   return (
     <form
+      id='contact-me'
       className='flex flex-col gap-3 max-w-md bg-bgColorSecondary rounded-md shadow-xl outline outline-1 outline-bgColorContrast p-3'
       ref={formRef}
       onSubmit={handleSubmit}

@@ -12,11 +12,6 @@
 }
 
 :root {
-  --test: #020617;
-  --text-2: rgb(15, 23, 42);
-  --text-3: #3b82f6;
-  --text-4: #2563eb;
-
   --main-font-fam: 'Roboto Mono', monospace;
 }
 
@@ -58,6 +53,7 @@ img {
 
 /* the classes that are toggled between theme selection */
 .light {
+  /* zinc-50: #fafafa from tailwind */
   --bgColor-primary: 250, 250, 250;
   --bgColor-primary-dark: ;
 
@@ -84,14 +80,14 @@ img {
   /* zinc-700: #3f3f46 from tailwind derived in tint and shade at 60% darker: #19191c */
   --bgColor-secondary: 25, 25, 28;
 
-  /* neutral-600 from tailwind */
+  /* neutral-600: #525252 from tailwind */
   --bgColor-contrast: 82, 82, 82;
 
-  /* violet-100 from tailwind */
+  /* violet-100: #ede9fe from tailwind */
   --text-color-primary: 237, 233, 254;
-  /* violet-500 from tailwind */
+  /* violet-500: #8b5cf6 from tailwind */
   --text-color-primary-hover: 139, 92, 246;
 
-  /* violet-400 from tailwind */
+  /* violet-400: #a78bfa from tailwind */
   --text-color-secondary: 167, 139, 250;
 }
