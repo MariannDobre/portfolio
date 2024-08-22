@@ -6,7 +6,7 @@ function AboutUser() {
 
   return (
     <div className='max-w-[36rem]'>
-      <p className='text-lg text-textColorMain leading-8 tracking-wider'>
+      <p className='text-sm text-textColorMain leading-8 tracking-wider md:text-base lg:text-lg'>
         I'm Marian,&nbsp;a&nbsp;
         <strong className='text-textColorSecondary'>web&nbsp;developer</strong>
         &nbsp;based in&nbsp;

@@ -17,7 +17,7 @@ function UserImage() {
         <img />
       ) : (
         <div
-          className={`flex items-center justify-center bg-bgColorMain text-textColorSecondary w-72 min-h-[28rem] text-5xl rounded-md`}
+          className={`flex items-center justify-center bg-bgColorMain text-textColorSecondary w-64 min-h-[28rem] text-5xl rounded-md sm:w-72`}
         >
           <FaUserAlt />
         </div>

@@ -1,15 +1,14 @@
-import React, { useContext, useRef, useState } from 'react';
-import { ThemeContext } from '../../../context/ThemeContext';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
-const labelStyles = 'text-textColorMainHover text-lg tracking-wide';
+const labelStyles =
+  'text-textColorMainHover text-base tracking-wide md:text-lg';
 const inputStyles =
   'bg-bgColorMain w-full text-textColorMain caret-textColorSecondary rounded-md shadow-lg text-sm tracking-wider px-2 py-1 border-none outline outline-1 outline-bgColorContrast focus-visible:outline-textColorSecondary transition-all duration-300';
 
 function ContactForm() {
   const formRef = useRef();
-  const { theme } = useContext(ThemeContext);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -87,7 +86,7 @@ function ContactForm() {
         Message
       </label>
       <textarea
-        className='bg-bgColorMain py-1 px-2 text-textColorMain w-full rounded-md shadow-lg text-sm h-52 outline outline-1 outline-bgColorContrast focus-visible:outline-textColorSecondary transition-all duration-300'
+        className='bg-bgColorMain py-1 px-2 text-textColorMain w-full rounded-md shadow-lg text-sm h-72 outline outline-1 outline-bgColorContrast focus-visible:outline-textColorSecondary transition-all duration-300 sm:h-60 md:h-52'
         id='message'
         name='message'
         value={message}
@@ -96,7 +95,7 @@ function ContactForm() {
       />
 
       <button
-        className='bg-bgColorMain shadow-lg rounded-md tracking-wide py-1 text-lg text-textColorMain outline outline-1 outline-bgColorContrast border-none hover:text-textColorSecondary hover:outline-textColorSecondary focus-visible:text-textColorSecondary focus-visible:outline-textColorSecondary transition-all duration-300'
+        className='bg-bgColorMain shadow-lg rounded-md tracking-wide py-1 text-base text-textColorMain outline outline-1 outline-bgColorContrast border-none hover:text-textColorSecondary hover:outline-textColorSecondary focus-visible:text-textColorSecondary focus-visible:outline-textColorSecondary transition-all duration-300 md:text-lg'
         disabled={isSubmiting}
       >
         {isSubmiting ? 'Sending email...' : 'Send'}

@@ -7,18 +7,17 @@ function Course() {
   const { theme } = useContext(ThemeContext);
 
   const handleExpandList = () => {
-    setExpandList((value) => !value);
+    setExpandList((action) => !action);
   };
-  console.log(expandList);
 
   return (
-    <div className='flex flex-col gap-6 p-3 w-full'>
+    <div className='flex flex-col sm:flex-col gap-6 p-3 w-full'>
       <div className='flex flex-col gap-1'>
-        <p className='text-2xl text-textColorMain'>
+        <p className='text-lg text-textColorMain lg:text-xl xl:text-2xl'>
           <span
-            className={`text-3xl font-medium ${
+            className={`text-xl font-medium ${
               theme === 'light' ? 'text-slate-600' : 'text-zinc-500'
-            }`}
+            } lg:text-2xl xl:text-3xl`}
           >
             Course:
           </span>
@@ -26,14 +25,14 @@ function Course() {
         </p>
 
         <p
-          className={`text-lg ${
+          className={`text-sm ${
             theme === 'light' ? 'text-blue-300' : 'text-violet-200'
-          }`}
+          } lg:text-base xl:text-lg`}
         >
           <span
-            className={`text-xl font-medium ${
+            className={`text-base font-medium ${
               theme === 'light' ? 'text-slate-700' : 'text-zinc-600'
-            }`}
+            } lg:text-lg xl:text-xl`}
           >
             Note:
           </span>
@@ -42,8 +41,8 @@ function Course() {
         </p>
       </div>
 
-      <div className='flex gap-6 max-w-full min-h-[480px]'>
-        <div className='flex flex-col items-center w-96 min-h-full bg-bgColorSecondary shadow-xl rounded-md outline outline-1 outline-bgColorContrast'>
+      <div className='flex flex-col sm:flex-col sm:items-start lg:flex-row gap-6 max-w-full min-h-full md:min-h-[520px]'>
+        <div className='flex flex-col items-center w-72 min-h-full bg-bgColorSecondary shadow-xl rounded-md outline outline-1 outline-bgColorContrast sm:w-96 md:h-[520px]'>
           <div
             className={`flex items-center justify-center ${
               theme === 'light' ? 'bg-stone-100' : 'bg-stone-200'
@@ -58,11 +57,11 @@ function Course() {
           </div>
 
           <div className='flex flex-col items-center gap-6 h-full p-3'>
-            <p className='text-textColorMainHover text-lg tracking-wide'>
+            <p className='text-textColorMainHover text-base tracking-wide sm:text-lg'>
               Technologies Used
             </p>
 
-            <ul className='text-textColorMain text-sm tracking-wide grid grid-cols-2 gap-y-3 list-disc marker:text-textColorMainHover'>
+            <ul className='text-textColorMain text-xs tracking-wide flex flex-col gap-1 list-disc marker:text-textColorMainHover sm:text-sm sm:grid sm:grid-cols-2 sm:gap-y-3'>
               <li>React</li>
 
               <li>React Router Dom</li>
@@ -81,7 +80,7 @@ function Course() {
             </ul>
 
             <a
-              className='text-lg mt-auto text-textColorMain no-underline tracking-wide outline-none hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300'
+              className='text-base mt-auto text-textColorMain no-underline tracking-wide outline-none hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300 sm:text-lg'
               href='https://www.udemy.com/certificate/UC-06ab86a2-5b3f-4d2a-beb0-c2eaaed813e2/'
               target='_blank'
               rel='noopener noreferrer'
@@ -92,18 +91,22 @@ function Course() {
         </div>
 
         <button
-          className={`block text-textColorSecondary sm:block lg:hidden`}
+          className={`self-start block text-xs tracking-wide border-none outline-none text-textColorSecondary hover:text-textColorMainHover focus-visible:text-textColorMainHover transition-all duration-300 sm:block sm:self-start sm:text-sm lg:hidden`}
           onClick={handleExpandList}
         >
           {expandList ? 'Hide Covered Topics' : 'Expand Covered Topics'}
         </button>
 
-        <div className='flex flex-col gap-6'>
-          <p className='text-textColorMainHover text-lg tracking-wide'>
+        <div
+          className={`flex flex-col gap-6 ${
+            expandList ? 'block' : 'hidden'
+          } lg:block`}
+        >
+          <p className='text-textColorMainHover text-base tracking-wide sm:text-lg'>
             Topics Covered
           </p>
 
-          <ul className='text-textColorMain text-sm tracking-wide grid grid-cols-2 gap-y-3 list-disc list-inside marker:text-textColorMainHover'>
+          <ul className='text-textColorMain text-xs tracking-wide flex flex-col gap-3 list-disc list-inside marker:text-textColorMainHover sm:text-sm md:grid md:grid-cols-2 md:gap-y-3'>
             <li>
               Working with <strong>Components</strong>,&nbsp;
               <strong>Props</strong>,&nbsp;&&nbsp;<strong>JSX</strong>

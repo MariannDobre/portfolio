@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import React, { useState } from 'react';
 
 function Tooltip({
   children,
@@ -7,7 +6,6 @@ function Tooltip({
   position = 'top',
 }) {
   const [showTooltip, setShowTooltip] = useState(false);
-  const { theme } = useContext(ThemeContext);
 
   const getTooltipPosition = (upcomingPosition) => {
     switch (upcomingPosition) {
@@ -95,7 +93,7 @@ function Tooltip({
       {showTooltip && (
         <span
           style={getTooltipPosition(position)}
-          className='absolute flex items-center justify-center text-center whitespace-nowrap text-sm text-textColorMain tracking-wide bg-bgColorSecondary outline outline-1 outline-bgColorContrast py-1.5 px-3 z-[9999] rounded-md shadow-xl'
+          className='absolute flex items-center justify-center text-center whitespace-nowrap text-xs text-textColorMain tracking-wide bg-bgColorSecondary outline outline-1 outline-bgColorContrast py-1.5 px-3 z-[9999] rounded-md shadow-xl md:text-sm'
         >
           {tooltipContent}
         </span>

@@ -17,7 +17,7 @@ function PageAbout() {
   return (
     <div
       id='about'
-      className='relative w-full min-h-full bg-bgColorSecondary flex items-center justify-evenly p-3 rounded-md shadow-xl outline outline-1 outline-bgColorContrast'
+      className='relative w-full min-h-full bg-bgColorSecondary flex flex-col items-center gap-16 p-16 rounded-md shadow-xl outline outline-1 outline-bgColorContrast'
     >
       <UserImage />
 

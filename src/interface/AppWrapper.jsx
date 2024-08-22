@@ -135,7 +135,7 @@ function SectionMarker({ icon, sectionTitle }) {
       </div>
 
       <div>
-        <h1 className='capitalize text-2xl text-textColorMain tracking-wider'>
+        <h1 className='capitalize text-lg text-textColorMain tracking-wider sm:text-xl md:text-2xl'>
           {sectionTitle}
         </h1>
       </div>

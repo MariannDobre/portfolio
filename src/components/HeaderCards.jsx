@@ -6,7 +6,7 @@ import { SiJavascript } from 'react-icons/si';
 
 // css styles for responsive layout
 const responsiveContainer =
-  'grid grid-cols-2 gap-y-8 gap-x-8 sm:grid 2xl:flex 2xl:items-center 2xl:gap-6';
+  'flex flex-col items-center gap-8 sm:grid sm:grid-cols-2 sm:gap-y-8 sm:gap-x-8 2xl:flex 2xl:items-center 2xl:gap-6';
 
 const responsiveCard =
   'max-w-52 h-[420px] sm:max-w-56 sm:h-[452px] 2xl:max-w-60 2xl:min-h-full';
